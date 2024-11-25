@@ -169,18 +169,6 @@ export const FlashcardTraining = () => {
 					)}
 				</div>
 			)}
-			{config.devMode() && (
-				<div className="bg-gray-900 text-gray-300 p-3 rounded">
-					<p>user:</p>
-					<pre className="text-xs text-yellow-200">
-						{JSON.stringify(user, null, 2)}
-					</pre>
-					<p>testingFlashcardHistoryItem:</p>
-					<pre className="text-xs text-orange-400">
-						{JSON.stringify(getCurrentHistoryItem(), null, 2)}
-					</pre>
-				</div>
-			)}
 		</>
 	);
 };

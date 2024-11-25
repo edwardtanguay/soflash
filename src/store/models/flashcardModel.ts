@@ -100,6 +100,7 @@ export const flashcardModel: FlashcardModel = persist(
 			const randomIndex = Math.floor(
 				Math.random() * state.flashcards.length
 			);
+			console.log(11112, randomIndex);
 			state.testingFlashcard = state.flashcards[randomIndex];
 			state.answer = "";
 			state.numberRight = 0;
