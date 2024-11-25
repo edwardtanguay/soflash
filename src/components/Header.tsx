@@ -18,14 +18,14 @@ export const Header = () => {
 						see{" "}
 						<a
 							target="_blank"
-							href="https://github.com/edwardtanguay/trilingual-little-prince"
+							href="https://github.com/edwardtanguay/soflash"
 							className="underline"
 						>
 							repo
 						</a>
 						,{" "}
 						<a
-							href="https://trilingual-little-prince.vercel.app"
+							href="https://soflash.vercel.app"
 							target="_blank"
 							className="underline"
 						>
