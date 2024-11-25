@@ -8,7 +8,7 @@ export interface MainModel {
 
 export const mainModel: MainModel = {
 	// thunks
-	initialize: thunk((actions, _, { getStoreActions }) => {
+	initialize: thunk((_, __, { getStoreActions }) => {
 		getStoreActions().flashcardModel.loadFlashcards();
 	}),
 };
