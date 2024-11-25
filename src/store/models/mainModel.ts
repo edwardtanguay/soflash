@@ -1,7 +1,14 @@
+import { Thunk, thunk } from "easy-peasy";
+import { StoreModel } from "../store";
+
 export interface MainModel {
-	message: string;
+	// thunks
+	initialize: Thunk<this, void, void, StoreModel>;
 }
 
 export const mainModel: MainModel = {
-	message: 'This is the welcome page.'
+	// thunks
+	initialize: thunk((actions, _, { getStoreActions }) => {
+		getStoreActions().flashcardModel.loadFlashcards();
+	}),
 };
