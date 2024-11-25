@@ -1,5 +1,5 @@
 import { FlashcardTraining } from "../components/FlashcardTraining";
 
-export const PageWelcome = () => {
+export const PageLearn = () => {
 	return <FlashcardTraining />;
 };
