@@ -1,9 +1,5 @@
-import { useTypedStoreState } from "../store/hooks"
+import { FlashcardTraining } from "../components/FlashcardTraining";
 
 export const PageWelcome = () => {
-	const { message } = useTypedStoreState((state) => state.mainModel);
-
-	return (
-		<p>{message}</p>
-	)
-}
+	return <FlashcardTraining />;
+};
