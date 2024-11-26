@@ -14,6 +14,29 @@ export const Header = () => {
 
 	const location = useLocation();
 
+	const ProfileInfoArea = () => {
+		return (
+			<div className="profileInfoWrapper">
+				<div className="flex gap-2">
+					<img
+						className="rounded-full"
+						src={`images/users/${user.idCode}.jpg`}
+					/>
+					<p className="userName text-slate-800">
+						{isSmartphone ? (
+							<p>{user.firstName}</p>
+						) : (
+							<p>{userFullName}</p>
+						)}
+					</p>
+				</div>
+				<p className="userScore font-mono text-slate-700">
+					{qstr.showScore(user.totalScore)}
+				</p>
+			</div>
+		);
+	};
+
 	return (
 		<section className="areaHeader">
 			<div className={responsiveCssClass}>
@@ -28,24 +51,7 @@ export const Header = () => {
 					</div>
 					[{location.pathname}]
 					<NavLink to="profile">
-						<div className="profileInfoWrapper">
-							<div className="flex gap-2">
-								<img
-									className="rounded-full"
-									src={`images/users/${user.idCode}.jpg`}
-								/>
-								<p className="userName text-slate-800">
-									{isSmartphone ? (
-										<p>{user.firstName}</p>
-									) : (
-										<p>{userFullName}</p>
-									)}
-								</p>
-							</div>
-							<p className="userScore font-mono text-slate-700">
-								{qstr.showScore(user.totalScore)}
-							</p>
-						</div>
+						<ProfileInfoArea />
 					</NavLink>
 				</div>
 				<Nav />
