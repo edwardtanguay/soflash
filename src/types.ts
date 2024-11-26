@@ -94,9 +94,9 @@ export type User = {
 };
 
 export const blankUser = {
-	idCode: "edwardtanguay",
-	firstName: "Edward",
-	lastName: "Tanguay",
+	idCode: "anonymous",
+	firstName: "Guest",
+	lastName: "User",
 	totalScore: 0,
 	flashcardHistory: {},
 };
