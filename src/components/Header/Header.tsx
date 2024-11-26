@@ -20,7 +20,7 @@ export const Header = () => {
 							Social Flashcards
 						</h2>
 					</div>
-					<div className="profileInfoWrapper flex flex-col">
+					<div className="profileInfoWrapper">
 						<div className="flex gap-2">
 							<img
 								src={`images/users/${user.idCode}.jpg`}
