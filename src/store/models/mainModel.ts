@@ -1,22 +1,26 @@
-import { computed, Computed, Thunk, thunk } from "easy-peasy";
+import { action, Action, Thunk, thunk } from "easy-peasy";
 import { StoreModel } from "../store";
 
 export interface MainModel {
 	// state
+	screenWidth: number;
+
+	// actions
+	setScreenWidth: Action<this, number>;
 
 	// computed state
-	screenWidth: Computed<this, number>;
 
 	// thunks
 	initialize: Thunk<this, void, void, StoreModel>;
 }
 
 export const mainModel: MainModel = {
-	//state
+	// state
+	screenWidth: 0,
 
-	// computed state
-	screenWidth: computed(() => {
-		return 999;
+	// actions
+	setScreenWidth: action((state, screenWidth) => {
+		state.screenWidth = screenWidth;
 	}),
 
 	// thunks
