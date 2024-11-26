@@ -1,4 +1,12 @@
-import { action, Action, Computed, computed, persist, thunk, Thunk } from "easy-peasy";
+import {
+	action,
+	Action,
+	Computed,
+	computed,
+	persist,
+	thunk,
+	Thunk,
+} from "easy-peasy";
 import { blankUser, FlashcardHistoryItem, User } from "../../types";
 
 export interface AuthenticationModel {
@@ -11,6 +19,7 @@ export interface AuthenticationModel {
 	// actions
 	incrementTotalScore: Action<this, number>;
 	setFlashcardHistoryItem: Action<this, [string, FlashcardHistoryItem]>;
+	resetUser: Action<this>;
 
 	// thunks
 	clearLocalStorage: Thunk<this>;
@@ -36,11 +45,14 @@ export const authenticationModel: AuthenticationModel = persist(
 			state.user.flashcardHistory[testingFlashcardIdCode] =
 				flashcardHistoryItem;
 		}),
+		resetUser: action((state) => {
+			state.user = blankUser;
+		}),
 
 		// thunks
-		clearLocalStorage: thunk(() => {
-			console.log(11116, 'going to clear');
-		})
+		clearLocalStorage: thunk((actions) => {
+			actions.resetUser();
+		}),
 	},
 	{
 		storage: "localStorage",

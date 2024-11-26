@@ -1,5 +1,5 @@
 export const appVersion = (): string => {
-	return "0.019 learn";
+	return "0.020 reset";
 };
 
 export const devMode = (): boolean => {
