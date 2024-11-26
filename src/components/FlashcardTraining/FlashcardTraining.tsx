@@ -188,10 +188,10 @@ export const FlashcardTraining = () => {
 									<span>submit answer</span>
 								)}
 								{testingStatus === "lookingAtWrongAnswer" && (
-									<span>try again</span>
+									<span className="text-red-700">try again</span>
 								)}
 								{testingStatus === "lookingAtRightAnswer" && (
-									<span className="text-green-500">next flashcard</span>
+									<span className="text-green-800">next flashcard</span>
 								)}
 							</button>
 						</div>
