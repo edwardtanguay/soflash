@@ -1,6 +1,6 @@
 /* eslint-disable no-case-declarations */
 /* eslint-disable react-hooks/exhaustive-deps */
-import { ChangeEvent, useEffect } from "react";
+import { ChangeEvent, useEffect, useRef } from "react";
 import {
 	useTypedStoreActions,
 	useTypedStoreState,
@@ -22,6 +22,7 @@ export const FlashcardTraining = () => {
 	const { isSmartphone, responsiveCssClass } = useTypedStoreState(
 		(state) => state.mainModel
 	);
+	const inputBoxRef = useRef<HTMLInputElement | null>(null);
 
 	useEffect(() => {
 		setNextTestingFlashcard();
@@ -65,6 +66,9 @@ export const FlashcardTraining = () => {
 			case "lookingAtRightAnswer":
 				setNextTestingFlashcard();
 				break;
+		}
+		if (inputBoxRef.current) {
+			inputBoxRef.current.focus();
 		}
 	};
 
@@ -149,6 +153,7 @@ export const FlashcardTraining = () => {
 						<div className="inputArea mb-2">
 							<input
 								value={answer}
+								ref={inputBoxRef}
 								autoCapitalize="off"
 								spellCheck={false}
 								autoCorrect="off"
