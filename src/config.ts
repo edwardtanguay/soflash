@@ -1,9 +1,9 @@
 export const appVersion = (): string => {
-	return "0.020 reset";
+	return "0.021 no dev";
 };
 
 export const devMode = (): boolean => {
-	return true;
+	return false;
 };
 
 export const responsiveWidthBreak = (): number => {
