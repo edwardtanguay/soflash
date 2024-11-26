@@ -96,7 +96,7 @@ export const FlashcardTraining = () => {
 				{getCurrentHistoryItem() && (
 					<div className="bg-slate-300 mb-6 p-3 w-full rounded">
 						{isSmartphone && (
-							<div className="mb-6">
+							<div className="mb-3">
 								<div className="text-[1rem] flex gap-3 min-w-[14rem] bg-slate-200 py-1 px-2 mb-2 justify-between rounded-t-md">
 									<p className="text-green-800">
 										times got right:{" "}
@@ -113,7 +113,7 @@ export const FlashcardTraining = () => {
 										}
 									</p>
 								</div>
-								<p className="mb-3 text-[1.3rem] text-center">
+								<p className="text-[1.3rem] text-center">
 									{testingFlashcard.front}&nbsp;
 								</p>
 							</div>
