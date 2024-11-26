@@ -1,4 +1,4 @@
-import { action, Action, Thunk, thunk } from "easy-peasy";
+import { action, Action, computed, Computed, Thunk, thunk } from "easy-peasy";
 import { StoreModel } from "../store";
 
 export interface MainModel {
@@ -9,6 +9,7 @@ export interface MainModel {
 	setScreenWidth: Action<this, number>;
 
 	// computed state
+	isSmartphone: Computed<this, boolean>;
 
 	// thunks
 	initialize: Thunk<this, void, void, StoreModel>;
@@ -17,6 +18,11 @@ export interface MainModel {
 export const mainModel: MainModel = {
 	// state
 	screenWidth: 0,
+
+	// computed state
+	isSmartphone: computed((state) => {
+		return state.screenWidth <= 400;
+	}),
 
 	// actions
 	setScreenWidth: action((state, screenWidth) => {
