@@ -1,5 +1,5 @@
 export const devMode = (): boolean => {
-	return false;
+	return true;
 };
 
 export const pointsForWrongAnswer = (): number => {
