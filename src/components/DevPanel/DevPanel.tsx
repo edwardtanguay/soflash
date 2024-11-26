@@ -3,8 +3,8 @@ import * as config from "../../config";
 import "./styles.scss";
 
 export const DevPanel = () => {
-	const { screenWidth, isSmartphone, responsiveCssClass } =
-		useTypedStoreState((state) => state.mainModel);
+	const { screenWidth, isSmartphone, responsiveCssClass } = useTypedStoreState((state) => state.mainModel);
+	const { user } = useTypedStoreState((state) => state.authenticationModel);
 
 	return (
 		<>
@@ -37,6 +37,9 @@ export const DevPanel = () => {
 							</li>
 						</ul>
 					</div>
+					<pre className="mt-3 text-xs text-orange-700 h-[20rem] overflow-y-auto">
+						{JSON.stringify(user, null, 2)}
+					</pre>
 				</section>
 			)}
 		</>

@@ -14,6 +14,7 @@ export const FlashcardTraining = () => {
 	const { testingFlashcard, answer, answerIsCorrect, testingStatus } =
 		useTypedStoreState((state) => state.flashcardModel);
 	const { user } = useTypedStoreState((state) => state.authenticationModel);
+	const {incrementTotalScore} = useTypedStoreActions(actions => actions.authenticationModel);
 	const {
 		setNextTestingFlashcard,
 		setAnswer,
@@ -46,7 +47,7 @@ export const FlashcardTraining = () => {
 					getCurrentHistoryItem().attempts.push(flashcardAttempt);
 					getCurrentHistoryItem().timesAnsweredRight++;
 					setTestingStatus("lookingAtRightAnswer");
-					user.totalScore += config.pointsForRightAnswer();
+					incrementTotalScore(config.pointsForRightAnswer())
 				} else {
 					// answer is wrong
 					const flashcardAttempt: FlashcardAttempt = {
@@ -57,7 +58,7 @@ export const FlashcardTraining = () => {
 					getCurrentHistoryItem().attempts.push(flashcardAttempt);
 					getCurrentHistoryItem().timesAnsweredWrong++;
 					setTestingStatus("lookingAtWrongAnswer");
-					user.totalScore += config.pointsForWrongAnswer();
+					incrementTotalScore(config.pointsForWrongAnswer())
 				}
 				break;
 			case "lookingAtWrongAnswer":

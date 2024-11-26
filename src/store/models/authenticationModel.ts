@@ -1,4 +1,4 @@
-import { Computed, computed, persist } from "easy-peasy";
+import { action, Action, Computed, computed, persist } from "easy-peasy";
 import { blankUser, User } from "../../types";
 
 export interface AuthenticationModel {
@@ -9,6 +9,7 @@ export interface AuthenticationModel {
 	userFullName: Computed<this, string>;
 
 	// actions
+	incrementTotalScore: Action<this, number >;
 
 	// thunks
 }
@@ -24,6 +25,10 @@ export const authenticationModel: AuthenticationModel = persist(
 		}),
 
 		// actions
+		incrementTotalScore: action((state, increaseBy) => {
+			console.log(11115, increaseBy);
+			state.user.totalScore += increaseBy;
+		})
 
 		// thunks
 	},
