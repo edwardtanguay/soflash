@@ -7,19 +7,23 @@ section.areaHeader {
 			font-size: 1.2rem;
 			background-color: #ccc;
 			text-align: center;
-			margin-bottom: 1rem;
+			margin-bottom: .5rem;
 			border-radius: 0.5rem;
 		}
 		.profileInfoWrapper {
 			display: flex;
-			flex-direction: row;
+			align-items: center;
 			justify-content: space-between;
+			margin-bottom: .5rem;
 			img {
 				width: 2.2rem;
 				height: 2.2rem;
 			}
 			.userName {
 				font-size: 1.5rem;
+			}
+			.userScore {
+				font-size: 1.8rem;
 			}
 		}
 	}

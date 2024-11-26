@@ -15,14 +15,13 @@ export const Header = () => {
 		<section className="areaHeader">
 			<div className={responsiveCssClass}>
 				<div className="headerWrapper flex justify-between">
-					<div>
-						<h2 className="headerText text-slate-800">
-							Social Flashcards
-						</h2>
-					</div>
+					<h2 className="headerText text-slate-800">
+						Social Flashcards
+					</h2>
 					<div className="profileInfoWrapper">
 						<div className="flex gap-2">
-							<img className="rounded-full"
+							<img
+								className="rounded-full"
 								src={`images/users/${user.idCode}.jpg`}
 							/>
 							<p className="userName text-slate-800">
@@ -33,7 +32,7 @@ export const Header = () => {
 								)}
 							</p>
 						</div>
-						<p className="font-mono text-slate-700 text-[2.2rem] -mt-2">
+						<p className="userScore font-mono text-slate-700">
 							{qstr.showScore(user.totalScore)}
 						</p>
 					</div>
