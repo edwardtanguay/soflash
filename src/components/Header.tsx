@@ -3,52 +3,35 @@ import { Nav } from "./Nav";
 import * as qstr from "../qtools/qstr";
 
 export const Header = () => {
-	const { user, userFullName } = useTypedStoreState(
+	const { user } = useTypedStoreState(
 		(state) => state.flashcardModel
 	);
+	const { isSmartphone } = useTypedStoreState((state) => state.mainModel);
+
 	return (
 		<>
-			<div className="flex justify-between">
+			<div
+				className={`flex justify-between ${
+					isSmartphone ? "flex-col" : ""
+				}`}
+			>
 				<div>
-					<h1 className="text-[1.8rem] text-slate-800">
+					<h1 className="text-[2rem] text-slate-800">
 						Social Flashcards
 					</h1>
-					<h2 className="mb-3 text-sm italic">
-						made with React, TypeScript, Tailwind, Easy-Peasy Redux,
-						see{" "}
-						<a
-							target="_blank"
-							href="https://github.com/edwardtanguay/soflash"
-							className="underline"
-						>
-							repo
-						</a>
-						,{" "}
-						<a
-							href="https://soflash.vercel.app"
-							target="_blank"
-							className="underline"
-						>
-							site
-						</a>{" "}
-						or more of my{" "}
-						<a
-							className="underline"
-							target="_blank"
-							href="https://tanguay-eu.vercel.app/howtos"
-						>
-							projects
-						</a>
-					</h2>
 				</div>
-				<div className="flex flex-col items-end">
+				<div
+					className={`flex flex-col ${
+						isSmartphone ? "items-start" : "items-end"
+					}`}
+				>
 					<div className="flex gap-2">
 						<img
 							src={`images/users/${user.idCode}.jpg`}
 							className="w-[1.8rem] h-[1.8rem] rounded-full "
 						/>
 						<p className="text-[1.2rem] text-slate-800">
-							{userFullName}
+							{user.firstName}
 						</p>
 					</div>
 					<p className="font-mono text-slate-700 text-[2.2rem] -mt-2">
