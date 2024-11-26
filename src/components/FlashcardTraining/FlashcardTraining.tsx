@@ -188,7 +188,7 @@ export const FlashcardTraining = () => {
 									<span>submit answer</span>
 								)}
 								{testingStatus === "lookingAtWrongAnswer" && (
-									<span className="text-red-700">try again</span>
+									<span className="text-red-900">try again</span>
 								)}
 								{testingStatus === "lookingAtRightAnswer" && (
 									<span className="text-green-800">next flashcard</span>
