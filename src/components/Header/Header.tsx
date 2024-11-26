@@ -49,10 +49,13 @@ export const Header = () => {
 							Learn from flashcards and share them with others
 						</p>
 					</div>
-					[{location.pathname}]
-					<NavLink to="profile">
+					{location.pathname === "/profile" ? (
 						<ProfileInfoArea />
-					</NavLink>
+					) : (
+						<NavLink to="profile">
+							<ProfileInfoArea />
+						</NavLink>
+					)}
 				</div>
 				<Nav />
 			</div>

@@ -1,5 +1,5 @@
 export const appVersion = (): string => {
-	return '0.017';
+	return "0.018 profile";
 };
 
 export const devMode = (): boolean => {
