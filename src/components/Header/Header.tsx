@@ -15,9 +15,14 @@ export const Header = () => {
 		<section className="areaHeader">
 			<div className={responsiveCssClass}>
 				<div className="headerWrapper flex justify-between">
-					<h2 className="headerText text-slate-800">
-						Social Flashcards
-					</h2>
+					<div className="headerTextWrapper">
+						<h2 className="headerText text-slate-800">
+							Social Flashcards
+						</h2>
+						<p className="subheaderText">
+							Learn from flashcards and share them with others
+						</p>
+					</div>
 					<div className="profileInfoWrapper">
 						<div className="flex gap-2">
 							<img
