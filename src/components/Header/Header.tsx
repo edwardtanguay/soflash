@@ -22,11 +22,10 @@ export const Header = () => {
 					</div>
 					<div className="profileInfoWrapper">
 						<div className="flex gap-2">
-							<img
+							<img className="rounded-full"
 								src={`images/users/${user.idCode}.jpg`}
-								className="w-[1.8rem] h-[1.8rem] rounded-full "
 							/>
-							<p className="text-[1.2rem] text-slate-800">
+							<p className="userName text-slate-800">
 								{isSmartphone ? (
 									<p>{user.firstName}</p>
 								) : (
