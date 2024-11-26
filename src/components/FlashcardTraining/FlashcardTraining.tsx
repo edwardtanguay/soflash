@@ -92,109 +92,131 @@ export const FlashcardTraining = () => {
 
 	return (
 		<section className="areaFlashcardTraining">
-			{getCurrentHistoryItem() && (
-				<div className="bg-slate-300 mb-6 p-3 w-full rounded">
-					{isSmartphone && (
-						<div className="mb-6">
-							<div className="text-xs flex gap-3 min-w-[14rem] bg-slate-200 py-1 px-2 mb-2 justify-center rounded-t-md">
-								<p className="text-green-800">
-									times got right:{" "}
-									{getCurrentHistoryItem().timesAnsweredRight}
-								</p>
-								<p className="text-red-800">
-									times got wrong:{" "}
-									{getCurrentHistoryItem().timesAnsweredWrong}
-								</p>
-							</div>
-							<p className="mb-3 text-center">
-								{testingFlashcard.front}&nbsp;
-							</p>
-						</div>
-					)}
-					{!isSmartphone && (
-						<div className="flex justify-between">
-							<p className="mb-3">
-								{testingFlashcard.front}&nbsp;
-							</p>
-							<div className="text-xs flex gap-3 min-w-[14rem] justify-end">
-								<p className="text-green-800">
-									times got right:{" "}
-									{getCurrentHistoryItem().timesAnsweredRight}
-								</p>
-								<p className="text-red-800">
-									times got wrong:{" "}
-									{getCurrentHistoryItem().timesAnsweredWrong}
+			<div className={responsiveCssClass}>
+				{getCurrentHistoryItem() && (
+					<div className="bg-slate-300 mb-6 p-3 w-full rounded">
+						{isSmartphone && (
+							<div className="mb-6">
+								<div className="text-xs flex gap-3 min-w-[14rem] bg-slate-200 py-1 px-2 mb-2 justify-center rounded-t-md">
+									<p className="text-green-800">
+										times got right:{" "}
+										{
+											getCurrentHistoryItem()
+												.timesAnsweredRight
+										}
+									</p>
+									<p className="text-red-800">
+										times got wrong:{" "}
+										{
+											getCurrentHistoryItem()
+												.timesAnsweredWrong
+										}
+									</p>
+								</div>
+								<p className="mb-3 text-center">
+									{testingFlashcard.front}&nbsp;
 								</p>
 							</div>
-						</div>
-					)}
+						)}
+						{!isSmartphone && (
+							<div className="flex justify-between">
+								<p className="mb-3">
+									{testingFlashcard.front}&nbsp;
+								</p>
+								<div className="text-xs flex gap-3 min-w-[14rem] justify-end">
+									<p className="text-green-800">
+										times got right:{" "}
+										{
+											getCurrentHistoryItem()
+												.timesAnsweredRight
+										}
+									</p>
+									<p className="text-red-800">
+										times got wrong:{" "}
+										{
+											getCurrentHistoryItem()
+												.timesAnsweredWrong
+										}
+									</p>
+								</div>
+							</div>
+						)}
 
-					<div className="flex gap-3 mb-2">
-						<input
-							value={answer}
-							className="rounded w-full p-1"
-							style={{
-								backgroundColor: currentAnswerBackgroundColor(),
-								color: currentAnswerTextColor(),
-							}}
-							placeholder="spanish"
-							onChange={(e) => handleAnswerChange(e)}
-							autoFocus={true}
-							onKeyDown={(e) => {
-								if (e.key === "Enter" && answer.trim() !== "") {
-									handleMainButtonPress();
-								}
-							}}
-						/>
-						<button
-							className="bg-slate-400 opacity-80 text-sm py-0 px-2 rounded hover:opacity-100 whitespace-nowrap"
-							onClick={() => handleMainButtonPress()}
-						>
-							{testingStatus === "typingAnswer" && (
-								<span>submit answer</span>
-							)}
-							{testingStatus === "lookingAtWrongAnswer" && (
-								<span>try again</span>
-							)}
-							{testingStatus === "lookingAtRightAnswer" && (
-								<span>next flashcard</span>
-							)}
-						</button>
-					</div>
-					{testingStatus === "lookingAtWrongAnswer" && (
-						<div>
-							<p className="text-green-950 ml-1">
-								{testingFlashcard.back}
-							</p>
+						<div className="inputArea  mb-2">
+							<input
+								value={answer}
+								className="rounded w-full p-1"
+								style={{
+									backgroundColor:
+										currentAnswerBackgroundColor(),
+									color: currentAnswerTextColor(),
+								}}
+								placeholder="spanish"
+								onChange={(e) => handleAnswerChange(e)}
+								autoFocus={true}
+								onKeyDown={(e) => {
+									if (
+										e.key === "Enter" &&
+										answer.trim() !== ""
+									) {
+										handleMainButtonPress();
+									}
+								}}
+							/>
+							<button
+								className="bg-slate-400 opacity-80 text-sm py-0 px-2 rounded hover:opacity-100 whitespace-nowrap"
+								onClick={() => handleMainButtonPress()}
+							>
+								{testingStatus === "typingAnswer" && (
+									<span>submit answer</span>
+								)}
+								{testingStatus === "lookingAtWrongAnswer" && (
+									<span>try again</span>
+								)}
+								{testingStatus === "lookingAtRightAnswer" && (
+									<span>next flashcard</span>
+								)}
+							</button>
 						</div>
-					)}
-					{testingStatus === "lookingAtRightAnswer" && (
-						<div>
-							{getCurrentHistoryItem().attempts.map(
-								(attempt, index) => {
-									return (
-										<p key={index} className="flex gap-3">
-											<span className="text-slate-700">
-												{attempt.when}
-											</span>
-											<span
-												className={`${
-													attempt.status === "right"
-														? "text-green-800 ml-1"
-														: "text-red-800 ml-1"
-												}`}
+						{testingStatus === "lookingAtWrongAnswer" && (
+							<div>
+								<p className="text-green-950 ml-1">
+									{testingFlashcard.back}
+								</p>
+							</div>
+						)}
+						{testingStatus === "lookingAtRightAnswer" && (
+							<div>
+								{getCurrentHistoryItem().attempts.map(
+									(attempt, index) => {
+										return (
+											<p
 												key={index}
+												className="flex gap-3"
 											>
-												{attempt.answer}
-											</span>
-										</p>
-									);
-								}
-							)}
-						</div>
-					)}
-				</div>
-			)}
+												<span className="text-slate-700">
+													{attempt.when}
+												</span>
+												<span
+													className={`${
+														attempt.status ===
+														"right"
+															? "text-green-800 ml-1"
+															: "text-red-800 ml-1"
+													}`}
+													key={index}
+												>
+													{attempt.answer}
+												</span>
+											</p>
+										);
+									}
+								)}
+							</div>
+						)}
+					</div>
+				)}
+			</div>
 		</section>
 	);
 };
