@@ -1,5 +1,5 @@
 import { DevPanel } from "../components/DevPanel/DevPanel";
-import { FlashcardTraining } from "../components/FlashcardTraining";
+import { FlashcardTraining } from "../components/FlashcardTraining/FlashcardTraining";
 
 export const PageLearn = () => {
 	return (

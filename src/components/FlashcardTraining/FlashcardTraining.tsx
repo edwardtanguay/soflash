@@ -4,10 +4,11 @@ import { ChangeEvent, useEffect } from "react";
 import {
 	useTypedStoreActions,
 	useTypedStoreState,
-} from "../store/easy-peasy-hooks";
-import * as config from "../config";
-import * as qstr from "../qtools/qstr";
-import { FlashcardAttempt } from "../types";
+} from "../../store/easy-peasy-hooks";
+import * as config from "../../config";
+import * as qstr from "../../qtools/qstr";
+import { FlashcardAttempt } from "../../types";
+import './styles.scss';
 
 export const FlashcardTraining = () => {
 	const { testingFlashcard, answer, answerIsCorrect, testingStatus, user } =
@@ -18,6 +19,7 @@ export const FlashcardTraining = () => {
 		setAnswerIsCorrect,
 		setTestingStatus,
 	} = useTypedStoreActions((actions) => actions.flashcardModel);
+	// const { isSmartphone, responsiveCssClass } = useTypedStoreState( (state) => state.mainModel);
 
 	useEffect(() => {
 		setNextTestingFlashcard();
@@ -87,7 +89,7 @@ export const FlashcardTraining = () => {
 	};
 
 	return (
-		<>
+		<section className="areaFlashcardTraining">
 			{getCurrentHistoryItem() && (
 				<div className="bg-slate-300 mb-6 p-3 w-full rounded">
 					<div className="flex justify-between">
@@ -169,6 +171,6 @@ export const FlashcardTraining = () => {
 					)}
 				</div>
 			)}
-		</>
+		</section>
 	);
 };
