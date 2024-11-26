@@ -15,9 +15,9 @@ export const PageProfile = () => {
 						continue learning and tracking your progress.
 					</p>
 					<p className="mb-3">
-						However, if you want your history to be availbe
+						However, if you want your history to be available
 						to you on other devices, you need to set up an account
-						and log in. This feature will be added soon.
+						and log in. This feature will be added soon
 					</p>
 					<div>
 						<button className="normal">Reset score and delete all flashcard-taking history</button>
