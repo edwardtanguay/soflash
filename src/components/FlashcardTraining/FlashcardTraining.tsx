@@ -145,6 +145,7 @@ export const FlashcardTraining = () => {
 						<div className="inputArea mb-2">
 							<input
 								value={answer}
+								autoCapitalize="off"
 								className="rounded w-full p-1"
 								style={{
 									backgroundColor:
