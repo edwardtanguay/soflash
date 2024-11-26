@@ -227,7 +227,7 @@ export const FlashcardTraining = () => {
 					</div>
 				)}
 			</div>
-			<p className="font-mono text-xs text-slate-500">ver {config.appVersion()}</p>
+			<p className="font-mono text-xs text-slate-500 w-full text-right">ver {config.appVersion()}</p>
 		</section>
 	);
 };
