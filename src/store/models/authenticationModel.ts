@@ -1,5 +1,5 @@
 import { action, Action, Computed, computed, persist } from "easy-peasy";
-import { blankUser, User } from "../../types";
+import { blankUser, FlashcardHistoryItem, User } from "../../types";
 
 export interface AuthenticationModel {
 	// state
@@ -9,7 +9,8 @@ export interface AuthenticationModel {
 	userFullName: Computed<this, string>;
 
 	// actions
-	incrementTotalScore: Action<this, number >;
+	incrementTotalScore: Action<this, number>;
+	setFlashcardHistoryItem: Action<this, [string, FlashcardHistoryItem]>;
 
 	// thunks
 }
@@ -28,7 +29,12 @@ export const authenticationModel: AuthenticationModel = persist(
 		incrementTotalScore: action((state, increaseBy) => {
 			console.log(11115, increaseBy);
 			state.user.totalScore += increaseBy;
-		})
+		}),
+		setFlashcardHistoryItem: action((state, payload) => {
+			const [testingFlashcardIdCode, flashcardHistoryItem] = payload;
+			state.user.flashcardHistory[testingFlashcardIdCode] =
+				flashcardHistoryItem;
+		}),
 
 		// thunks
 	},
