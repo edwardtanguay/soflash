@@ -50,7 +50,9 @@ export const Header = () => {
 						</p>
 					</div>
 					{location.pathname === "/profile" ? (
-						<ProfileInfoArea />
+						<NavLink to="learn">
+							<ProfileInfoArea />
+						</NavLink>
 					) : (
 						<NavLink to="profile">
 							<ProfileInfoArea />
