@@ -90,6 +90,10 @@ export const FlashcardTraining = () => {
 		}
 	};
 
+	const getSmartDate = (attempt: FlashcardAttempt) => {
+		return isSmartphone ? qstr.getSmallDate(attempt.when) : attempt.when;
+	};
+
 	return (
 		<section className="areaFlashcardTraining">
 			<div className={responsiveCssClass}>
@@ -183,21 +187,21 @@ export const FlashcardTraining = () => {
 						</div>
 						{testingStatus === "lookingAtWrongAnswer" && (
 							<div>
-								<p className="text-green-950 ml-1">
+								<p className="text-green-800 ml-1">
 									{testingFlashcard.back}
 								</p>
 							</div>
 						)}
-						{testingStatus !== "lookingAtRightAnswer" && (
-							<table>
+						{testingStatus === "lookingAtRightAnswer" && (
+							<div className="answerArea">
 								{getCurrentHistoryItem().attempts.map(
 									(attempt, index) => {
 										return (
-											<tr>
-												<td className="fieldWhen text-slate-700">
-													{attempt.when}
-												</td>
-												<td
+											<div className="flex gap-1">
+												<div className="w-fit whitespace-nowrap text-slate-700">
+													{getSmartDate(attempt)}
+												</div>
+												<div
 													className={`${
 														attempt.status ===
 														"right"
@@ -207,12 +211,12 @@ export const FlashcardTraining = () => {
 													key={index}
 												>
 													{attempt.answer}
-												</td>
-											</tr>
+												</div>
+											</div>
 										);
 									}
 								)}
-							</table>
+							</div>
 						)}
 					</div>
 				)}

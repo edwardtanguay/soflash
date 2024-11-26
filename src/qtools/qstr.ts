@@ -689,3 +689,24 @@ export const getCurrentTimestamp = (): string => {
 
 	return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 };
+
+export const getSmallDate = (dateString: string): string => {
+	const months = [
+		"Jan",
+		"Feb",
+		"Mar",
+		"Apr",
+		"May",
+		"Jun",
+		"Jul",
+		"Aug",
+		"Sep",
+		"Oct",
+		"Nov",
+		"Dec",
+	];
+	const date = new Date(dateString);
+	const month = months[date.getMonth()];
+	const day = date.getDate();
+	return `${month} ${day.toString().padStart(2, "0")}`;
+};

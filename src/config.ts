@@ -3,7 +3,7 @@ export const devMode = (): boolean => {
 };
 
 export const responsiveWidthBreak = (): number => {
-	return 480;
+	return 610;
 };
 
 export const pointsForWrongAnswer = (): number => {
