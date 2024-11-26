@@ -1,3 +1,7 @@
+export const appVersion = (): string => {
+	return '0.013 autocorrect';
+};
+
 export const devMode = (): boolean => {
 	return false;
 };

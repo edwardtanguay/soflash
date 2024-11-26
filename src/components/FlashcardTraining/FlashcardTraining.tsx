@@ -102,7 +102,7 @@ export const FlashcardTraining = () => {
 		<section className="areaFlashcardTraining">
 			<div className={responsiveCssClass}>
 				{getCurrentHistoryItem() && (
-					<div className="bg-slate-300 mb-6 p-3 w-full rounded">
+					<div className="bg-slate-300 p-3 w-full rounded">
 						{isSmartphone && (
 							<div className="mb-3">
 								<div className="text-[1rem] flex gap-3 min-w-[14rem] bg-slate-200 py-1 px-2 mb-2 justify-between rounded-t-md">
@@ -157,6 +157,7 @@ export const FlashcardTraining = () => {
 								autoCapitalize="off"
 								spellCheck={false}
 								autoCorrect="off"
+								autoComplete="off"
 								className="rounded w-full p-1"
 								style={{
 									backgroundColor:
@@ -226,6 +227,7 @@ export const FlashcardTraining = () => {
 					</div>
 				)}
 			</div>
+			<p className="font-mono text-xs text-slate-500">ver {config.appVersion()}</p>
 		</section>
 	);
 };
