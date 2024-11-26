@@ -8,7 +8,7 @@ import {
 import * as config from "../../config";
 import * as qstr from "../../qtools/qstr";
 import { FlashcardAttempt } from "../../types";
-import './styles.scss';
+import "./styles.scss";
 
 export const FlashcardTraining = () => {
 	const { testingFlashcard, answer, answerIsCorrect, testingStatus, user } =
@@ -19,7 +19,9 @@ export const FlashcardTraining = () => {
 		setAnswerIsCorrect,
 		setTestingStatus,
 	} = useTypedStoreActions((actions) => actions.flashcardModel);
-	// const { isSmartphone, responsiveCssClass } = useTypedStoreState( (state) => state.mainModel);
+	const { isSmartphone, responsiveCssClass } = useTypedStoreState(
+		(state) => state.mainModel
+	);
 
 	useEffect(() => {
 		setNextTestingFlashcard();
@@ -92,19 +94,41 @@ export const FlashcardTraining = () => {
 		<section className="areaFlashcardTraining">
 			{getCurrentHistoryItem() && (
 				<div className="bg-slate-300 mb-6 p-3 w-full rounded">
-					<div className="flex justify-between">
-						<p className="mb-3">{testingFlashcard.front}&nbsp;</p>
-						<div className="text-xs flex gap-3 min-w-[14rem] justify-end">
-							<p className="text-green-800">
-								times got right:{" "}
-								{getCurrentHistoryItem().timesAnsweredRight}
-							</p>
-							<p className="text-red-800">
-								times got wrong:{" "}
-								{getCurrentHistoryItem().timesAnsweredWrong}
+					{isSmartphone && (
+						<div className="mb-6">
+							<div className="text-xs flex gap-3 min-w-[14rem] bg-slate-200 py-1 px-2 mb-2 justify-center rounded-t-md">
+								<p className="text-green-800">
+									times got right:{" "}
+									{getCurrentHistoryItem().timesAnsweredRight}
+								</p>
+								<p className="text-red-800">
+									times got wrong:{" "}
+									{getCurrentHistoryItem().timesAnsweredWrong}
+								</p>
+							</div>
+							<p className="mb-3 text-center">
+								{testingFlashcard.front}&nbsp;
 							</p>
 						</div>
-					</div>
+					)}
+					{!isSmartphone && (
+						<div className="flex justify-between">
+							<p className="mb-3">
+								{testingFlashcard.front}&nbsp;
+							</p>
+							<div className="text-xs flex gap-3 min-w-[14rem] justify-end">
+								<p className="text-green-800">
+									times got right:{" "}
+									{getCurrentHistoryItem().timesAnsweredRight}
+								</p>
+								<p className="text-red-800">
+									times got wrong:{" "}
+									{getCurrentHistoryItem().timesAnsweredWrong}
+								</p>
+							</div>
+						</div>
+					)}
+
 					<div className="flex gap-3 mb-2">
 						<input
 							value={answer}
