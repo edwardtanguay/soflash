@@ -188,19 +188,16 @@ export const FlashcardTraining = () => {
 								</p>
 							</div>
 						)}
-						{testingStatus === "lookingAtRightAnswer" && (
-							<div>
+						{testingStatus !== "lookingAtRightAnswer" && (
+							<table>
 								{getCurrentHistoryItem().attempts.map(
 									(attempt, index) => {
 										return (
-											<p
-												key={index}
-												className="flex gap-3"
-											>
-												<span className="text-slate-700">
+											<tr>
+												<td className="fieldWhen text-slate-700">
 													{attempt.when}
-												</span>
-												<span
+												</td>
+												<td
 													className={`${
 														attempt.status ===
 														"right"
@@ -210,12 +207,12 @@ export const FlashcardTraining = () => {
 													key={index}
 												>
 													{attempt.answer}
-												</span>
-											</p>
+												</td>
+											</tr>
 										);
 									}
 								)}
-							</div>
+							</table>
 						)}
 					</div>
 				)}

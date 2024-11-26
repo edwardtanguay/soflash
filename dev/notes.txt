@@ -1,0 +1,25 @@
+
+
+
+
+										return (
+											<p
+												key={index}
+												className="flex gap-3"
+											>
+												<span className="text-slate-700">
+													{attempt.when}
+												</span>
+												<span
+													className={`${
+														attempt.status ===
+														"right"
+															? "text-green-800 ml-1"
+															: "text-red-800 ml-1"
+													}`}
+													key={index}
+												>
+													{attempt.answer}
+												</span>
+											</p>
+										);
