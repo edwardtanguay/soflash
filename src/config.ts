@@ -9,3 +9,7 @@ export const pointsForWrongAnswer = (): number => {
 export const pointsForRightAnswer = (): number => {
 	return 10;
 }
+
+export const responsiveWidthBreak = (): number => {
+	return 480;
+}

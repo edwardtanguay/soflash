@@ -1,5 +1,6 @@
 import { action, Action, computed, Computed, Thunk, thunk } from "easy-peasy";
 import { StoreModel } from "../store";
+import * as config from "../../config";
 
 export interface MainModel {
 	// state
@@ -22,12 +23,10 @@ export const mainModel: MainModel = {
 
 	// computed state
 	isSmartphone: computed((state) => {
-		return state.screenWidth <= 400;
+		return state.screenWidth <= config.responsiveWidthBreak();
 	}),
 	responsiveCssClass: computed((state) => {
-		return state.isSmartphone
-			? "sizeSmartphone"
-			: "sizeComputer";
+		return state.isSmartphone ? "sizeSmartphone" : "sizeComputer";
 	}),
 
 	// actions

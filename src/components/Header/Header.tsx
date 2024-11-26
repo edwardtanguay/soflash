@@ -4,7 +4,9 @@ import * as qstr from "../../qtools/qstr";
 import "./styles.scss";
 
 export const Header = () => {
-	const { user } = useTypedStoreState((state) => state.flashcardModel);
+	const { user, userFullName } = useTypedStoreState(
+		(state) => state.flashcardModel
+	);
 	const { isSmartphone, responsiveCssClass } = useTypedStoreState(
 		(state) => state.mainModel
 	);
@@ -18,18 +20,18 @@ export const Header = () => {
 							Social Flashcards
 						</h2>
 					</div>
-					<div
-						className={`flex flex-col ${
-							isSmartphone ? "items-start" : "items-end"
-						}`}
-					>
+					<div className="flex flex-col">
 						<div className="flex gap-2">
 							<img
 								src={`images/users/${user.idCode}.jpg`}
 								className="w-[1.8rem] h-[1.8rem] rounded-full "
 							/>
 							<p className="text-[1.2rem] text-slate-800">
-								{user.firstName}
+								{isSmartphone ? (
+									<p>{user.firstName}</p>
+								) : (
+									<p>{userFullName}</p>
+								)}
 							</p>
 						</div>
 						<p className="font-mono text-slate-700 text-[2.2rem] -mt-2">
