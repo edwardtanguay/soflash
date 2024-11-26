@@ -1,8 +1,19 @@
 section.areaHeader {
 	.sizeSmartphone {
-		background-color: purple;
+		.headerWrapper {
+			flex-direction: column;
+		}
+		.headerText {
+			font-size: 1.2rem;
+			background-color: #ccc;
+			text-align: center;
+			margin-bottom: 1rem;
+			border-radius: .5rem;
+		}
 	}
 	.sizeComputer {
-		background-color: red;
+		.headerText {
+			font-size: 2rem;
+		}
 	}
 }

@@ -12,15 +12,11 @@ export const Header = () => {
 	return (
 		<section className="areaHeader">
 			<div className={responsiveCssClass}>
-				<div
-					className={`flex justify-between ${
-						isSmartphone ? "flex-col" : ""
-					}`}
-				>
+				<div className="headerWrapper flex justify-between">
 					<div>
-						<h1 className="text-[2rem] text-slate-800">
+						<h2 className="headerText text-slate-800">
 							Social Flashcards
-						</h1>
+						</h2>
 					</div>
 					<div
 						className={`flex flex-col ${
