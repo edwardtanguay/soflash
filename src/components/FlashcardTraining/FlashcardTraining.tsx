@@ -191,7 +191,7 @@ export const FlashcardTraining = () => {
 									<span>try again</span>
 								)}
 								{testingStatus === "lookingAtRightAnswer" && (
-									<span className="text-yellow-300">next flashcard</span>
+									<span className="text-green-500">next flashcard</span>
 								)}
 							</button>
 						</div>
