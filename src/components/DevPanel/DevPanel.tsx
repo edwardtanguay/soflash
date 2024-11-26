@@ -20,7 +20,7 @@ export const DevPanel = () => {
 							</li>
 							<li>
 								isSmartphone:{" "}
-								<span className="data">
+								<span className={`data ${isSmartphone ? 'isTrue' : 'isFalse'}`}>
 									{isSmartphone ? "true" : "false"}
 								</span>
 							</li>
