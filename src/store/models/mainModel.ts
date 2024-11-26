@@ -10,6 +10,7 @@ export interface MainModel {
 
 	// computed state
 	isSmartphone: Computed<this, boolean>;
+	responsiveCssClass: Computed<this, string>;
 
 	// thunks
 	initialize: Thunk<this, void, void, StoreModel>;
@@ -22,6 +23,11 @@ export const mainModel: MainModel = {
 	// computed state
 	isSmartphone: computed((state) => {
 		return state.screenWidth <= 400;
+	}),
+	responsiveCssClass: computed((state) => {
+		return state.isSmartphone
+			? "sizeSmartphone"
+			: "sizeComputer";
 	}),
 
 	// actions
