@@ -3,7 +3,7 @@ export const appVersion = (): string => {
 };
 
 export const devMode = (): boolean => {
-	return false;
+	return true;
 };
 
 export const responsiveWidthBreak = (): number => {

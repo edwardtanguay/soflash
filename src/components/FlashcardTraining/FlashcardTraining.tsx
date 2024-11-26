@@ -11,8 +11,9 @@ import { FlashcardAttempt } from "../../types";
 import "./styles.scss";
 
 export const FlashcardTraining = () => {
-	const { testingFlashcard, answer, answerIsCorrect, testingStatus, user } =
+	const { testingFlashcard, answer, answerIsCorrect, testingStatus } =
 		useTypedStoreState((state) => state.flashcardModel);
+	const { user } = useTypedStoreState((state) => state.authenticationModel);
 	const {
 		setNextTestingFlashcard,
 		setAnswer,
@@ -203,7 +204,10 @@ export const FlashcardTraining = () => {
 								{getCurrentHistoryItem().attempts.map(
 									(attempt, index) => {
 										return (
-											<div className="flex gap-1">
+											<div
+												key={index}
+												className="flex gap-1"
+											>
 												<div className="w-fit whitespace-nowrap text-slate-700">
 													{getSmartDate(attempt)}
 												</div>
@@ -227,7 +231,9 @@ export const FlashcardTraining = () => {
 					</div>
 				)}
 			</div>
-			<p className="font-mono text-xs text-slate-500 w-full text-right mt-1">ver {config.appVersion()}</p>
+			<p className="font-mono text-xs text-slate-500 w-full text-right mt-1">
+				ver {config.appVersion()}
+			</p>
 		</section>
 	);
 };

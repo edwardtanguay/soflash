@@ -21,7 +21,6 @@ const randomizeArray = (flashcards: Flashcard[]): Flashcard[] => {
 
 export const getFlashcards = (): Flashcard[] => {
 	let flashcards: Flashcard[] = [];
-	console.log(11112, rawFlashcards.length);
 	for (const rawFlashcard of rawFlashcards) {
 		const flashcard: Flashcard = {
 			idCode: qstr.forceCamelNotation(

@@ -6,7 +6,7 @@ import { NavLink, useLocation } from "react-router-dom";
 
 export const Header = () => {
 	const { user, userFullName } = useTypedStoreState(
-		(state) => state.flashcardModel
+		(state) => state.authenticationModel
 	);
 	const { isSmartphone, responsiveCssClass } = useTypedStoreState(
 		(state) => state.mainModel
@@ -22,13 +22,13 @@ export const Header = () => {
 						className="rounded-full"
 						src={`images/users/${user.idCode}.jpg`}
 					/>
-					<p className="userName text-slate-800">
+					<div className="userName text-slate-800">
 						{isSmartphone ? (
 							<p>{user.firstName}</p>
 						) : (
 							<p>{userFullName}</p>
 						)}
-					</p>
+					</div>
 				</div>
 				<p className="userScore font-mono text-slate-700">
 					{qstr.showScore(user.totalScore)}
