@@ -142,7 +142,7 @@ export const FlashcardTraining = () => {
 							</div>
 						)}
 
-						<div className="inputArea  mb-2">
+						<div className="inputArea mb-2">
 							<input
 								value={answer}
 								className="rounded w-full p-1"
@@ -164,7 +164,7 @@ export const FlashcardTraining = () => {
 								}}
 							/>
 							<button
-								className="bg-slate-400 opacity-80 text-sm py-0 px-2 rounded hover:opacity-100 whitespace-nowrap"
+								className="bg-slate-400 rounded opacity-80 hover:opacity-100 whitespace-nowrap px-2 py-1"
 								onClick={() => handleMainButtonPress()}
 							>
 								{testingStatus === "typingAnswer" && (

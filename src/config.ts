@@ -1,5 +1,5 @@
 export const devMode = (): boolean => {
-	return true;
+	return false;
 };
 
 export const responsiveWidthBreak = (): number => {
