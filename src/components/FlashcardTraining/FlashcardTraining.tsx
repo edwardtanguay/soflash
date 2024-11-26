@@ -147,6 +147,7 @@ export const FlashcardTraining = () => {
 								value={answer}
 								autoCapitalize="off"
 								spellCheck={false}
+								autoCorrect="off"
 								className="rounded w-full p-1"
 								style={{
 									backgroundColor:
