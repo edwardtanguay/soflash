@@ -197,14 +197,14 @@ export const FlashcardTraining = () => {
 						</div>
 						{testingStatus === "lookingAtWrongAnswer" && (
 							<div>
+								<p className="text-green-800 ml-1">
+									{testingFlashcard.back}
+								</p>
 								{isSmartphone && (
 									<p className="text-red-800 ml-1">
 										{answer}
 									</p>
 								)}
-								<p className="text-green-800 ml-1">
-									{testingFlashcard.back}
-								</p>
 							</div>
 						)}
 						{testingStatus === "lookingAtRightAnswer" && (
