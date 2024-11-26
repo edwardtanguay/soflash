@@ -11,8 +11,8 @@ const menuItems = [
 		title: "Learn",
 	},
 	{
-		idCode: "info",
-		title: "Info",
+		idCode: "profile",
+		title: "Profile",
 	},
 	{
 		idCode: "about",
