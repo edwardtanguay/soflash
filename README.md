@@ -1,4 +1,4 @@
-# soflash
+# Social Flashcards
 
 The purpose of this website is to allow users to upload, test themselves on and share flashcards with each other.
 
@@ -9,6 +9,8 @@ It is also a showcase project for a typical opensource, fullstack MERN project f
 - frontend deployed at Vercel
 - cloud database at MongoDB Atlas
 - devop workflows (dev/main branches, release versions, GitHub Actions)
+
+![grafik](https://github.com/user-attachments/assets/a8ad0f7c-57b5-45e9-9d5b-47dd19e84259)
 
 ## status
 
