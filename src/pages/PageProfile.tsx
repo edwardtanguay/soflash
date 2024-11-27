@@ -56,13 +56,17 @@ export const PageProfile = () => {
 			<div className="bg-slate-300 p-3">
 				<div>
 					<div className="mb-3">
-					<p className="text-xs">Full name:</p>
-					<p className="font-semibold text-xl">{userFullName}</p>
+						<p className="text-xs">Full name:</p>
+						<p className="font-semibold text-xl">{userFullName}</p>
 					</div>
 					<div className="mb-3">
-					<p className="text-xs">Stats:</p>
+						<p className="text-xs">Stats:</p>
+						<p className="font-semibold text-xl">Flashcards available: 88</p>
+						<p className="font-semibold text-xl">Flashcards taken: 88</p>
 					</div>
-					<p className="text-xs">Reset score and flashcard history:</p>
+					<p className="text-xs">
+						Reset score and flashcard history:
+					</p>
 					<button
 						onClick={() => clearLocalStorage()}
 						className="danger mt-1"
