@@ -1,9 +1,17 @@
+import { SiteLocation } from "./types";
+
+const _siteLocation: SiteLocation = import.meta.env.VITE_SITE_LOCATION;
+
 export const appVersion = (): string => {
 	return "0.031 readme";
 };
 
 export const devMode = (): boolean => {
-	return false;
+	return true;
+};
+
+export const mockingOnlineSite = (): boolean => {
+	return true;
 };
 
 export const responsiveWidthBreak = (): number => {
@@ -16,4 +24,16 @@ export const pointsForWrongAnswer = (): number => {
 
 export const pointsForRightAnswer = (): number => {
 	return 10;
+};
+
+export const siteIsLocal = (): boolean => {
+	return _siteLocation === "local";
+};
+
+export const siteIsOnline = (): boolean => {
+	return _siteLocation !== "local";
+};
+
+export const siteLocation = (): SiteLocation => {
+		return _siteLocation;
 };

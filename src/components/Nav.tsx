@@ -9,14 +9,27 @@ const menuItems = [
 	{
 		idCode: "learn",
 		title: "Learn",
+		display: true,
+	},
+	{
+		idCode: "register",
+		title: "Register",
+		display: false,
+	},
+	{
+		idCode: "login",
+		title: "Login",
+		display: false,
 	},
 	{
 		idCode: "profile",
 		title: "Profile",
+		display: true,
 	},
 	{
 		idCode: "about",
 		title: "About",
+		display: true,
 	},
 ];
 
@@ -55,23 +68,24 @@ export const Nav = () => {
 									return (
 										<React.Fragment key={index}>
 											{menuItem.idCode !==
-												currentMenuItem.idCode && (
-												<div
-													key={index}
-													className="mt-[.2rem]"
-												>
-													<NavLink
-														to={menuItem.idCode}
-														onClick={() =>
-															setShowMobileMenu(
-																false
-															)
-														}
+												currentMenuItem.idCode &&
+												menuItem.display && (
+													<div
+														key={index}
+														className="mt-[.2rem]"
 													>
-														{menuItem.title}
-													</NavLink>
-												</div>
-											)}
+														<NavLink
+															to={menuItem.idCode}
+															onClick={() =>
+																setShowMobileMenu(
+																	false
+																)
+															}
+														>
+															{menuItem.title}
+														</NavLink>
+													</div>
+												)}
 										</React.Fragment>
 									);
 								})}
@@ -83,13 +97,15 @@ export const Nav = () => {
 							{menuItems.map((menuItem, index) => {
 								return (
 									<React.Fragment key={index}>
-										{
+										{(menuItem.display ||
+											currentMenuItem.idCode ===
+												menuItem.idCode) && (
 											<li key={index}>
 												<NavLink to={menuItem.idCode}>
 													{menuItem.title}
 												</NavLink>
 											</li>
-										}
+										)}
 									</React.Fragment>
 								);
 							})}

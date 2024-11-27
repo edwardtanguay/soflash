@@ -20,6 +20,7 @@ export interface AuthenticationModel {
 	incrementTotalScore: Action<this, number>;
 	setFlashcardHistoryItem: Action<this, [string, FlashcardHistoryItem]>;
 	resetUser: Action<this>;
+	numberOfTakenFlashcards: Computed<this, number>;
 
 	// thunks
 	clearLocalStorage: Thunk<this>;
@@ -47,6 +48,18 @@ export const authenticationModel: AuthenticationModel = persist(
 		}),
 		resetUser: action((state) => {
 			state.user = blankUser;
+		}),
+		numberOfTakenFlashcards: computed((state) => {
+			return Object.values(state.user.flashcardHistory).reduce(
+				(total, curr) => {
+					if (curr.timesAnsweredRight + curr.timesAnsweredWrong > 0) {
+						return total + 1;
+					} else {
+						return total;
+					}
+				},
+				0
+			);
 		}),
 
 		// thunks

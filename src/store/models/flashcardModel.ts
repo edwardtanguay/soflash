@@ -118,13 +118,23 @@ export const flashcardModel: FlashcardModel = {
 	}),
 
 	// thunks
-	setNextTestingFlashcard: thunk((actions, _, { getState, getStoreState, getStoreActions }) => {
-		actions.resetTestingFlashcard();
-		let flashcardHistoryItem: FlashcardHistoryItem = getStoreState().authenticationModel.user.flashcardHistory[ getState().testingFlashcard.idCode ];
-		if (!flashcardHistoryItem) {
-			flashcardHistoryItem = structuredClone(blankFlashcardHistoryItem);
+	setNextTestingFlashcard: thunk(
+		(actions, _, { getState, getStoreState, getStoreActions }) => {
+			actions.resetTestingFlashcard();
+			let flashcardHistoryItem: FlashcardHistoryItem =
+				getStoreState().authenticationModel.user.flashcardHistory[
+					getState().testingFlashcard.idCode
+				];
+			if (!flashcardHistoryItem) {
+				flashcardHistoryItem = structuredClone(
+					blankFlashcardHistoryItem
+				);
+			}
+			// getStoreState().authenticationModel.user.flashcardHistory[ getState().testingFlashcard.idCode ] = flashcardHistoryItem;
+			getStoreActions().authenticationModel.setFlashcardHistoryItem([
+				getState().testingFlashcard.idCode,
+				flashcardHistoryItem,
+			]);
 		}
-		// getStoreState().authenticationModel.user.flashcardHistory[ getState().testingFlashcard.idCode ] = flashcardHistoryItem;
-		getStoreActions().authenticationModel.setFlashcardHistoryItem([getState().testingFlashcard.idCode, flashcardHistoryItem]);
-	}),
+	),
 };

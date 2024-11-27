@@ -100,3 +100,5 @@ export const blankUser = {
 	totalScore: 0,
 	flashcardHistory: {},
 };
+
+export type SiteLocation = "local" | "vercel";
