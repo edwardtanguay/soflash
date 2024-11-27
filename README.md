@@ -1,6 +1,6 @@
 # Social Flashcards
 
-The purpose of this website is to allow users to upload, test themselves on and share flashcards with each other.
+The purpose of this website/app is to allow users to upload, test themselves on and share flashcards with each other.
 
 It is also a showcase project for a typical opensource, fullstack MERN project featuring:
 
