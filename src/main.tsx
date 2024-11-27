@@ -13,6 +13,7 @@ import { StoreProvider } from "easy-peasy";
 import { store } from "./store/store.ts";
 import { PageProfile } from "./pages/PageProfile.tsx";
 import { PageRegister } from "./pages/PageRegister.tsx";
+import { PageLogin } from "./pages/PageLogin.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -21,16 +22,20 @@ const router = createBrowserRouter([
 		element: <App />,
 		children: [
 			{
-				path: "/learn",
+				path: "learn",
 				element: <PageLearn />,
 			},
 			{
 				path: "profile",
-				element: <PageProfile/>
+				element: <PageProfile />,
 			},
 			{
 				path: "register",
-				element: <PageRegister/>
+				element: <PageRegister />,
+			},
+			{
+				path: "login",
+				element: <PageLogin />,
 			},
 			{
 				path: "about",
