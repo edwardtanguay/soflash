@@ -45,3 +45,9 @@ It is also a showcase project for a typical opensource, fullstack MERN project f
 
 -   `npm i`
 -   `npm run dev`
+-   create **.env** file:
+
+```
+VITE_SITE_LOCATION = local
+VITE_SITE_DEVMODE = false
+```

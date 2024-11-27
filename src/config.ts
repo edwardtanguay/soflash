@@ -1,13 +1,18 @@
 import { SiteLocation } from "./types";
+import * as config from "./config";
 
 const _siteLocation: SiteLocation = import.meta.env.VITE_SITE_LOCATION;
+const _devMode = import.meta.env.VITE_SITE_DEVMODE;
 
 export const appVersion = (): string => {
 	return "0.031 readme";
 };
 
 export const devMode = (): boolean => {
-	return true;
+	if (config.siteIsOnline()) {
+		return false;
+	}
+	return _devMode === "true";
 };
 
 export const mockingOnlineSite = (): boolean => {
@@ -35,5 +40,5 @@ export const siteIsOnline = (): boolean => {
 };
 
 export const siteLocation = (): SiteLocation => {
-		return _siteLocation;
+	return _siteLocation;
 };
