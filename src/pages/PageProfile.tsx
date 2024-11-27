@@ -38,11 +38,11 @@ export const PageProfile = () => {
 						<p className="mb-3">
 							However, if you want your history to be available to
 							you on other devices as well,{" "}
-							<NavLink to="register" className="underline">
+							<NavLink to="/register" className="underline">
 								set up an account
 							</NavLink>{" "}
 							or{" "}
-							<NavLink to="login" className="underline">
+							<NavLink to="/login" className="underline">
 								log in
 							</NavLink>
 							.

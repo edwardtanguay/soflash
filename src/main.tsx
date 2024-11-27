@@ -12,6 +12,7 @@ import { Page404 } from "./pages/Page404.tsx";
 import { StoreProvider } from "easy-peasy";
 import { store } from "./store/store.ts";
 import { PageProfile } from "./pages/PageProfile.tsx";
+import { PageRegister } from "./pages/PageRegister.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
 			{
 				path: "profile",
 				element: <PageProfile/>
+			},
+			{
+				path: "register",
+				element: <PageRegister/>
 			},
 			{
 				path: "about",
