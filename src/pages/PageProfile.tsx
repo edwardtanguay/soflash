@@ -12,6 +12,7 @@ export const PageProfile = () => {
 	const { clearLocalStorage } = useTypedStoreActions(
 		(actions) => actions.authenticationModel
 	);
+	const {flashcards} = useTypedStoreState(state => state.flashcardModel)
 
 	return (
 		<>
@@ -61,7 +62,7 @@ export const PageProfile = () => {
 					</div>
 					<div className="mb-3">
 						<p className="text-xs">Stats:</p>
-						<p className="font-semibold text-xl">Flashcards available: 88</p>
+						<p className="font-semibold text-xl">Flashcards available: {flashcards.length}</p>
 						<p className="font-semibold text-xl">Flashcards taken: 88</p>
 					</div>
 					<p className="text-xs">
