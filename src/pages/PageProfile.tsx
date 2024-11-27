@@ -6,13 +6,13 @@ import * as config from "../config";
 import { NavLink } from "react-router-dom";
 
 export const PageProfile = () => {
-	const { user, userFullName } = useTypedStoreState(
+	const { user, userFullName, numberOfTakenFlashcards } = useTypedStoreState(
 		(state) => state.authenticationModel
 	);
 	const { clearLocalStorage } = useTypedStoreActions(
 		(actions) => actions.authenticationModel
 	);
-	const {flashcards} = useTypedStoreState(state => state.flashcardModel)
+	const { flashcards } = useTypedStoreState((state) => state.flashcardModel);
 
 	return (
 		<>
@@ -62,8 +62,12 @@ export const PageProfile = () => {
 					</div>
 					<div className="mb-3">
 						<p className="text-xs">Stats:</p>
-						<p className="font-semibold text-xl">Flashcards available: {flashcards.length}</p>
-						<p className="font-semibold text-xl">Flashcards taken: 88</p>
+						<p className="font-semibold text-xl">
+							Flashcards available: {flashcards.length}
+						</p>
+						<p className="font-semibold text-xl">
+							Flashcards taken: {numberOfTakenFlashcards}
+						</p>
 					</div>
 					<p className="text-xs">
 						Reset score and flashcard history:
