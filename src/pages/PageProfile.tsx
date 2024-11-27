@@ -6,7 +6,9 @@ import * as config from "../config";
 import { NavLink } from "react-router-dom";
 
 export const PageProfile = () => {
-	const { user } = useTypedStoreState((state) => state.authenticationModel);
+	const { user, userFullName } = useTypedStoreState(
+		(state) => state.authenticationModel
+	);
 	const { clearLocalStorage } = useTypedStoreActions(
 		(actions) => actions.authenticationModel
 	);
@@ -27,8 +29,8 @@ export const PageProfile = () => {
 					{config.siteIsOnline() && (
 						<p className="mb-3">
 							However, if you want your history to be available to
-							you on other devices as well, you need to set up an account
-							and log in. This feature will be added soon.
+							you on other devices as well, you need to set up an
+							account and log in. This feature will be added soon.
 						</p>
 					)}
 					{config.siteIsLocal() && (
@@ -53,6 +55,13 @@ export const PageProfile = () => {
 			</div>
 			<div className="bg-slate-300 p-3">
 				<div>
+					<div className="mb-3">
+					<p className="text-xs">Full name:</p>
+					<p className="font-semibold text-xl">{userFullName}</p>
+					</div>
+					<div className="mb-3">
+					<p className="text-xs">Stats:</p>
+					</div>
 					<p>Reset score and flashcard history:</p>
 					<button
 						onClick={() => clearLocalStorage()}
