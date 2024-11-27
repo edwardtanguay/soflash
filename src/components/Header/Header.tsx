@@ -46,7 +46,7 @@ export const Header = () => {
 							Social Flashcards
 						</h2>
 						<p className="subheaderText">
-							Learn from flashcards and share them with others
+							Learn from your flashcards and share them with others
 						</p>
 					</div>
 					{location.pathname === "/profile" ? (
