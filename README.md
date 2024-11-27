@@ -10,14 +10,14 @@ It is also a showcase project for a typical opensource, fullstack MERN project f
 - cloud database at MongoDB Atlas
 - devop workflows (dev/main branches, release versions, GitHub Actions)
 
-![grafik](https://github.com/user-attachments/assets/a8ad0f7c-57b5-45e9-9d5b-47dd19e84259)
-
 ## status
 
 - this project is currently in early [MVP](https://en.wikipedia.org/wiki/Minimum_viable_product) stage (Nov 2024)
 - I use it on my computer and phone to learn from Spanish flashcards I create
 - for other users besides me, there is not yet an option to add flashcards, just test yourself with them
 - nor can you log in yet, but the guest user can take flashcards and earn points as if they are logged in
+
+![grafik](https://github.com/user-attachments/assets/a8ad0f7c-57b5-45e9-9d5b-47dd19e84259)
 
 ## looking for contributors
 
