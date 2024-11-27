@@ -62,10 +62,10 @@ export const PageProfile = () => {
 					<div className="mb-3">
 					<p className="text-xs">Stats:</p>
 					</div>
-					<p>Reset score and flashcard history:</p>
+					<p className="text-xs">Reset score and flashcard history:</p>
 					<button
 						onClick={() => clearLocalStorage()}
-						className="danger"
+						className="danger mt-1"
 					>
 						Reset now
 					</button>
