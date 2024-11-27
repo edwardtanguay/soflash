@@ -32,11 +32,11 @@ export const PageProfile = () => {
 					{config.siteIsLocal() && (
 						<p className="mb-3">
 							However, if you want your history to be available to
-							you on other devices,{" "} 
+							you on other devices,{" "}
 							<NavLink to="register" className="underline">
 								set up an account
-							</NavLink>
-							{" "}or{" "}
+							</NavLink>{" "}
+							or{" "}
 							<NavLink to="login" className="underline">
 								log in
 							</NavLink>
@@ -45,10 +45,17 @@ export const PageProfile = () => {
 					)}
 				</>
 			)}
-			<div>
-				<button onClick={() => clearLocalStorage()} className="normal">
-					Reset score and delete all flashcard-taking history
-				</button>
+
+			<div className="bg-slate-200 p-3">
+				<div>
+					<p>Reset score and flashcard history:</p>
+					<button
+						onClick={() => clearLocalStorage()}
+						className="normal"
+					>
+						Reset now
+					</button>
+				</div>
 			</div>
 		</>
 	);
