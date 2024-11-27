@@ -1,8 +1,32 @@
-# vite-react-menu-createbrowserrouter-easypeasy
+# soflash
 
-![grafik](https://github.com/user-attachments/assets/b72c605d-9242-41c9-9569-df32ba677285)
+The purpose of this website is to allow users to upload, test themselves on and share flashcards with each other.
 
-## features
+It is also a showcase project for a typical opensource, fullstack MERN project featuring:
+
+- users capable of logging in via Google (e.g. with Kinde)
+- backend deployeed at Hetzner
+- frontend deployed at Vercel
+- cloud database at MongoDB Atlas
+- devop workflows (dev/main branches, release versions, GitHub Actions)
+
+## status
+
+- this project is currently in early [MVP](https://en.wikipedia.org/wiki/Minimum_viable_product) stage (Nov 2024)
+- I use it on my computer and phone to learn from Spanish flashcards I create
+- for other users besides me, there is not yet an option to add flashcards, just test yourself with them
+- nor can you log in yet, but the guest user can take flashcards and earn points as if they are logged in
+
+## looking for contributors
+
+- if you are interested in getting experience in an opensource project, e.g. for your CV, portfolio, or just for the experience, contact me
+
+## live sites
+
+- development: https://soflash-dev.vercel.app
+- production: https://soflash.vercel.app
+
+## tech stack
 
 -   Vite
 -   React
@@ -19,14 +43,3 @@
 
 -   `npm i`
 -   `npm run dev`
-
-
-## easy-peasy Redux
-
-- easy-peasy is set up with one variable, see `/src/store`
-- [easy-peasy official documentation](https://easy-peasy.vercel.app/docs/tutorials/quick-start.html)
-- [practical example of using easy-peasy in a site I made](https://github.com/edwardtanguay/newtech2024/blob/dev/src/store/models/flashcardModel.ts) - uses state, actions and thunks
-
-## if you want to use this site with useContext instead of easy-peasy Redux
-
--   [Vite-React Site with React Router 6.4 createBrowserRouter + Context](https://github.com/edwardtanguay/vite-react-menu-createbrowserrouter-context)
