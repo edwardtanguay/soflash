@@ -4,8 +4,8 @@ import { FlashcardTraining } from "../components/FlashcardTraining/FlashcardTrai
 export const PageLearn = () => {
 	return (
 		<>
-			<DevPanel />
 			<FlashcardTraining />
+			<DevPanel />
 		</>
 	);
 };

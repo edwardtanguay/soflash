@@ -78,6 +78,9 @@ export const Nav = () => {
 							</div>
 						)}
 					</div>
+					{/* <div className="w-full bg-white text-[.6rem] text-center">
+						mock text
+					</div> */}
 					<div className="hidden md:block bg-slate-500 px-4 py-2 content">
 						<ul className="flex gap-4">
 							{menuItems.map((menuItem, index) => {
