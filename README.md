@@ -21,7 +21,7 @@ It is also a showcase project for a typical opensource, fullstack MERN project f
 
 ## looking for contributors
 
-- if you are interested in getting experience in an opensource project, e.g. for your CV, portfolio, or just for the experience, contact me
+- if you are interested in getting experience in an opensource project, e.g. for your CV, portfolio, or just for the experience, please contact me
 
 ## live sites
 
