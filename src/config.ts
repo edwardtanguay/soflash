@@ -1,5 +1,5 @@
 export const appVersion = (): string => {
-	return "0.027 icon";
+	return "0.028 share";
 };
 
 export const devMode = (): boolean => {
