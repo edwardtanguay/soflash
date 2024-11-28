@@ -1,8 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/edwardtanguay/soflash/pkg/tools"
+)
 
 func main() {
 	message := "this is a test"
-	fmt.Println(message)
+	fmt.Println(tools.Sentencize(message))
 }
