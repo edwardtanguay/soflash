@@ -1,5 +1,4 @@
 import { Flashcard } from "../../types";
-import * as qstr from "../../qtools/qstr";
 import * as importModel from './importModel';
 
 export let numberOfErrors = 0;
@@ -11,14 +10,12 @@ export const getFlashcards = (): Flashcard[] => {
 	const flashcards: Flashcard[] = [];
 	for (const cleanSourceFlashcard of cleanSourceFlashcards) {
 		const flashcard: Flashcard = {
-			idCode: qstr.forceCamelNotation(
-				cleanSourceFlashcard.front + qstr.forcePascalNotation(cleanSourceFlashcard.back)
-			),
+			language: cleanSourceFlashcard.language,
 			front: cleanSourceFlashcard.front,
 			back: cleanSourceFlashcard.back,
-			bulkSearch:
-				" " + cleanSourceFlashcard.front + " | " + cleanSourceFlashcard.back + " ",
-			isShowing: false,
+			whenCreated: cleanSourceFlashcard.whenCreated,
+			extras: cleanSourceFlashcard.extras,
+			
 		};
 
 		if (!flashcard.back.includes(";") && !flashcard.back.includes("[")) {

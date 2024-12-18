@@ -13,3 +13,14 @@ const deleteDuplicates = (flashcards: Flashcard[]): Flashcard[] => {
 const randomizeArray = (flashcards: Flashcard[]): Flashcard[] => {
 	return [...flashcards].sort(() => Math.random() - 0.5);
 };
+
+		const flashcard: Flashcard = {
+			idCode: qstr.forceCamelNotation(
+				cleanSourceFlashcard.front + qstr.forcePascalNotation(cleanSourceFlashcard.back)
+			),
+			front: cleanSourceFlashcard.front,
+			back: cleanSourceFlashcard.back,
+			bulkSearch:
+				" " + cleanSourceFlashcard.front + " | " + cleanSourceFlashcard.back + " ",
+			isShowing: false,
+		};
