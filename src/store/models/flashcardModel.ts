@@ -153,9 +153,9 @@ export const flashcardModel: FlashcardModel = {
 	),
 	loadFlashcards: thunk((actions, _, { getState }) => {
 		const state = getState();
-		state.flashcards = dataModel.getFlashcards();
-		state.filteredFlashcards = structuredClone(state.flashcards);
+		getState().flashcards = dataModel.getFlashcards();
 		actions.addAmountToFlashcardFilterItems();
+		getState().filteredFlashcards = structuredClone(state.flashcards);
 	}),
 	addAmountToFlashcardFilterItems: thunk((actions, _, { getState }) => {
 		getState().flashcardFilterItems.forEach((ffi) => {
