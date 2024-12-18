@@ -32,6 +32,7 @@ export interface FlashcardModel {
 	setNumberWrong: Action<this, number>;
 	addWrongAnswer: Action<this, string>;
 	resetTestingFlashcard: Action<this>;
+	setFilteredFlaschards: Action<this, string>;
 
 	// thunks
 	setNextTestingFlashcard: Thunk<this, void, void, StoreModel>;
@@ -89,6 +90,16 @@ export const flashcardModel: FlashcardModel = {
 		state.numberWrong = 0;
 		state.testingStatus = "typingAnswer";
 		state.wrongAnswers = [];
+	}),
+	setFilteredFlaschards: action((state, filterIdCode) => {
+		state.flashcardSearchText = "";
+		switch (filterIdCode) {
+			case "latest10":
+				state.filteredFlashcards = state.flashcards
+					.sort((a, b) => (a.whenCreated > b.whenCreated ? 1 : -1))
+					.slice(0, 5);
+				break;
+		}
 	}),
 
 	// thunks

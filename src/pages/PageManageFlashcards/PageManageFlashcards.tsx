@@ -7,8 +7,9 @@ import "./styles.scss";
 export const PageManageFlashcards = () => {
 	const { flashcards, flashcardSearchText, filteredFlashcards } =
 		useTypedStoreState((state) => state.flashcardModel);
-	const { handleFlashcardSearchTextChange } =
-		useTypedStoreActions((actions) => actions.flashcardModel);
+	const { handleFlashcardSearchTextChange, setFilteredFlaschards } = useTypedStoreActions(
+		(actions) => actions.flashcardModel
+	);
 
 	return (
 		<section className="pageManageFlashcards">
@@ -27,7 +28,7 @@ export const PageManageFlashcards = () => {
 					<button
 						type="button"
 						className="btnNormal mb-3"
-						// onClick={() => set("latest10")}
+						onClick={() => setFilteredFlaschards("latest10")}
 					>
 						latest 10
 					</button>
