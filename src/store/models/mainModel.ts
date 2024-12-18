@@ -5,6 +5,7 @@ import * as config from "../../config";
 export interface MainModel {
 	// state
 	screenWidth: number;
+	appErrorMessage: string;
 
 	// actions
 	setScreenWidth: Action<this, number>;
@@ -20,6 +21,7 @@ export interface MainModel {
 export const mainModel: MainModel = {
 	// state
 	screenWidth: 0,
+	appErrorMessage: 'this is a test error',
 
 	// computed state
 	isSmartphone: computed((state) => {

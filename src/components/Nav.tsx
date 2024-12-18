@@ -52,71 +52,80 @@ export const Nav = () => {
 	return (
 		<>
 			{currentMenuItem && (
-				<nav>
-					<div className="md:hidden bg-slate-500 text-[1.2rem] px-4 py-2 content">
-						<div className="flex justify-between">
-							<p>
-								<NavLink to={currentMenuItem.idCode}>
-									{currentMenuItem.title}
-								</NavLink>
-							</p>
-							<p
-								className="mt-1 cursor-pointer"
-								onClick={handleMenuToggle}
-							>
-								<GiHamburgerMenu />
-							</p>
+				<>
+					<nav>
+						<div className="md:hidden bg-slate-500 text-[1.2rem] px-4 py-2 content">
+							<div className="flex justify-between">
+								<p>
+									<NavLink to={currentMenuItem.idCode}>
+										{currentMenuItem.title}
+									</NavLink>
+								</p>
+								<p
+									className="mt-1 cursor-pointer"
+									onClick={handleMenuToggle}
+								>
+									<GiHamburgerMenu />
+								</p>
+							</div>
+							{showMobileMenu && (
+								<div>
+									{menuItems.map((menuItem, index) => {
+										return (
+											<React.Fragment key={index}>
+												{menuItem.idCode !==
+													currentMenuItem.idCode &&
+													menuItem.display && (
+														<div
+															key={index}
+															className="mt-[.2rem]"
+														>
+															<NavLink
+																to={
+																	menuItem.idCode
+																}
+																onClick={() =>
+																	setShowMobileMenu(
+																		false
+																	)
+																}
+															>
+																{menuItem.title}
+															</NavLink>
+														</div>
+													)}
+											</React.Fragment>
+										);
+									})}
+								</div>
+							)}
 						</div>
-						{showMobileMenu && (
-							<div>
+						<div className="hidden md:block bg-slate-500 px-4 py-2 content">
+							<ul className="flex gap-4">
 								{menuItems.map((menuItem, index) => {
 									return (
 										<React.Fragment key={index}>
-											{menuItem.idCode !==
-												currentMenuItem.idCode &&
-												menuItem.display && (
-													<div
-														key={index}
-														className="mt-[.2rem]"
+											{(menuItem.display ||
+												currentMenuItem.idCode ===
+													menuItem.idCode) && (
+												<li key={index}>
+													<NavLink
+														to={menuItem.idCode}
 													>
-														<NavLink
-															to={menuItem.idCode}
-															onClick={() =>
-																setShowMobileMenu(
-																	false
-																)
-															}
-														>
-															{menuItem.title}
-														</NavLink>
-													</div>
-												)}
+														{menuItem.title}
+													</NavLink>
+												</li>
+											)}
 										</React.Fragment>
 									);
 								})}
-							</div>
-						)}
+							</ul>
+						</div>
+					</nav>
+					<div className="bg-red-400 text-red-900 pl-4">
+						<p>error test</p>
 					</div>
-					<div className="hidden md:block bg-slate-500 px-4 py-2 content">
-						<ul className="flex gap-4">
-							{menuItems.map((menuItem, index) => {
-								return (
-									<React.Fragment key={index}>
-										{(menuItem.display ||
-											currentMenuItem.idCode ===
-												menuItem.idCode) && (
-											<li key={index}>
-												<NavLink to={menuItem.idCode}>
-													{menuItem.title}
-												</NavLink>
-											</li>
-										)}
-									</React.Fragment>
-								);
-							})}
-						</ul>
-					</div>
-				</nav>
+				</>
 			)}
 		</>
 	);
