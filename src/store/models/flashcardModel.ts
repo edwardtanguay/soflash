@@ -6,7 +6,7 @@ import {
 	FlashcardHistoryItem,
 	TestingStatus,
 } from "../../types";
-import * as dataModel from "../dataModel";
+import * as dataModel from "../db/dataModel";
 import { StoreModel } from "../store";
 
 export interface FlashcardModel {

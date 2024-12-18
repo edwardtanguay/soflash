@@ -1,6 +1,6 @@
-import _rawFlashcards from "../data/flashcards.json";
-import { Flashcard, RawFlashcard } from "../types";
-import * as qstr from "../qtools/qstr";
+import _rawFlashcards from "./data/flashcards.json";
+import { Flashcard, RawFlashcard } from "../../types";
+import * as qstr from "../../qtools/qstr";
 
 const rawFlashcards: RawFlashcard[] = _rawFlashcards;
 
