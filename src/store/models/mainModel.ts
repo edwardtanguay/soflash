@@ -21,7 +21,7 @@ export interface MainModel {
 export const mainModel: MainModel = {
 	// state
 	screenWidth: 0,
-	appErrorMessage: 'this is a test error',
+	appErrorMessage: '',
 
 	// computed state
 	isSmartphone: computed((state) => {
