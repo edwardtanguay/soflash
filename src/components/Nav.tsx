@@ -31,6 +31,11 @@ const menuItems = [
 		title: "About",
 		display: true,
 	},
+	{
+		idCode: "flashcards",
+		title: "Flashcards",
+		display: true,
+	},
 ];
 
 export const Nav = () => {
