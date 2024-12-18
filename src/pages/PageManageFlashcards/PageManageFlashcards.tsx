@@ -1,12 +1,22 @@
-import { useTypedStoreState } from "../../store/easy-peasy-hooks";
+import { useTypedStoreActions, useTypedStoreState } from "../../store/easy-peasy-hooks";
 import "./styles.scss";
 
 export const PageManageFlashcards = () => {
-	const { flashcards } = useTypedStoreState((state) => state.flashcardModel);
+	const { flashcards, flashcardSearchText } =
+		useTypedStoreState((state) => state.flashcardModel);
+	const {handleFlashcardSearchTextChange} = useTypedStoreActions(actions => actions.flashcardModel);
 
 	return (
 		<section className="pageManageFlashcards">
 			<h2 className="text-xl">{flashcards.length} flashcards</h2>
+			<form className="mt-3">
+				<input
+					className="text-[1.2rem] px-1"
+					value={flashcardSearchText}
+					onChange={(e) => handleFlashcardSearchTextChange(e.target.value)}
+					placeholder="search"
+				/>
+			</form>
 			<table>
 				<thead>
 					<tr>

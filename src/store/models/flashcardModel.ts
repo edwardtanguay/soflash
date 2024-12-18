@@ -12,7 +12,7 @@ import { StoreModel } from "../store";
 export interface FlashcardModel {
 	// state
 	flashcards: Flashcard[];
-	flashcardsSearchText: string;
+	flashcardSearchText: string;
 	testingFlashcard: Flashcard;
 	answer: string;
 	answerIsCorrect: boolean;
@@ -27,7 +27,7 @@ export interface FlashcardModel {
 
 	// actions
 	loadFlashcards: Action<this>;
-	toggleFlashcard: Action<this, Flashcard>;
+	// toggleFlashcard: Action<this, Flashcard>;
 	handleFlashcardSearchTextChange: Action<this, string>;
 	setAnswer: Action<this, string>;
 	setAnswerIsCorrect: Action<this, boolean>;
@@ -44,7 +44,7 @@ export interface FlashcardModel {
 export const flashcardModel: FlashcardModel = {
 	// state
 	flashcards: [],
-	flashcardsSearchText: "",
+	flashcardSearchText: "nnn",
 	testingFlashcard: emptyFlashcard,
 	answer: "",
 	answerIsCorrect: false,
@@ -55,11 +55,11 @@ export const flashcardModel: FlashcardModel = {
 
 	// computed state
 	filteredFlashcards: computed((state) => {
-		if (state.flashcardsSearchText.trim() === "") {
+		if (state.flashcardSearchText.trim() === "") {
 			return state.flashcards;
 		} else {
 			return state.flashcards.filter((m) =>
-				m.bulkSearch.includes(state.flashcardsSearchText)
+				m.bulkSearch.includes(state.flashcardSearchText)
 			);
 		}
 	}),
@@ -77,17 +77,13 @@ export const flashcardModel: FlashcardModel = {
 		state.flashcards = dataModel.getFlashcards();
 		state.filteredFlashcards = structuredClone(state.flashcards);
 	}),
-	toggleFlashcard: action((state, flashcard) => {
-		const _flashcard = state.flashcards.find(
-			(m) => m.idCode === flashcard.idCode
-		);
-		if (_flashcard) {
-			_flashcard.isShowing = !_flashcard.isShowing;
-		}
-	}),
+	// toggleFlashcard: action((state, flashcard) => {
+	// 	const _flashcard = state.flashcards.find(
+	// 		(m) => m.idCode === flashcard.idCode
+	// 	);
+	// }),
 	handleFlashcardSearchTextChange: action((state, searchText) => {
-		state.flashcardsSearchText = searchText;
-		state.flashcards.forEach((m) => (m.isShowing = false));
+		state.flashcardSearchText = searchText;
 	}),
 	setAnswer: action((state, answer) => {
 		state.answer = answer;
