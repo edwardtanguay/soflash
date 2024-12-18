@@ -38,7 +38,7 @@ export const PageManageFlashcards = () => {
 									setFilteredFlaschards(ffi.idCode)
 								}
 							>
-								{ffi.label}
+								{ffi.label} ({ffi.amount})
 							</button>
 						);
 					})}

@@ -34,6 +34,7 @@ export interface FlashcardModel {
 	addWrongAnswer: Action<this, string>;
 	resetTestingFlashcard: Action<this>;
 	setFilteredFlaschards: Action<this, string>;
+	addAmountToFlashcardFilterItems: Action<this>;
 
 	// thunks
 	setNextTestingFlashcard: Thunk<this, void, void, StoreModel>;
@@ -56,14 +57,17 @@ export const flashcardModel: FlashcardModel = {
 		{
 			idCode: "latest10",
 			label: "Latest 10",
+			amount: 0,
 		},
 		{
 			idCode: "latest20",
 			label: "Latest 20",
+			amount: 0,
 		},
 		{
 			idCode: "latest50",
 			label: "Latest 50",
+			amount: 0,
 		},
 	],
 
@@ -123,6 +127,11 @@ export const flashcardModel: FlashcardModel = {
 				break;
 		}
 	}),
+	addAmountToFlashcardFilterItems: action((state) => {
+		state.flashcardFilterItems.forEach((ffi) => {
+			ffi.amount = 999;
+		});
+	}),
 
 	// thunks
 	setNextTestingFlashcard: thunk(
@@ -147,5 +156,6 @@ export const flashcardModel: FlashcardModel = {
 		const state = getState();
 		state.flashcards = dataModel.getFlashcards();
 		state.filteredFlashcards = structuredClone(state.flashcards);
+		actions.addAmountToFlashcardFilterItems();
 	}),
 };
