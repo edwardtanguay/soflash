@@ -43,7 +43,10 @@ export const PageManageFlashcards = () => {
 						{flashcardFilterItems.map((ffi, index) => {
 							return (
 								<option key={index} value={ffi.idCode}>
-									{ffi.label} ({ffi.amount})
+									{ffi.label}{" "}
+									{!["search", "mostRecent"].includes(
+										ffi.idCode
+									) && <>({ffi.amount})</>}
 								</option>
 							);
 						})}
