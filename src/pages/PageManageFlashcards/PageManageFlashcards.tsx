@@ -10,10 +10,10 @@ export const PageManageFlashcards = () => {
 			<table>
 				<thead>
 					<tr>
-						<th>Language</th>
+						<th>Lang</th>
 						<th>Front</th>
 						<th>Back</th>
-						<th>When Created</th>
+						<th>When&nbsp;Created</th>
 						<th>Extras</th>
 					</tr>
 				</thead>

@@ -40,6 +40,12 @@
 			td {
 				color: #555;
 			}
+			td:nth-child(1) {
+				text-align: center;
+			}
+			td:nth-child(4) {
+				text-align: center;
+			}
 		}
 	}
 }
