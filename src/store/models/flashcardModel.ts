@@ -125,16 +125,19 @@ export const flashcardModel: FlashcardModel = {
 				state.filteredFlashcards = state.flashcards.filter(
 					(m) => m.language === "es"
 				);
+				state.filteredFlashcards = appTools.sortFlashcardsWhenAddedDescending(state.filteredFlashcards);
 				break;
 			case "french":
 				state.filteredFlashcards = state.flashcards.filter(
 					(m) => m.language === "fr"
 				);
+				state.filteredFlashcards = appTools.sortFlashcardsWhenAddedDescending(state.filteredFlashcards);
 				break;
 			case "italian":
 				state.filteredFlashcards = state.flashcards.filter(
 					(m) => m.language === "it"
 				);
+				state.filteredFlashcards = appTools.sortFlashcardsWhenAddedDescending(state.filteredFlashcards);
 				break;
 		}
 	}),
