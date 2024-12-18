@@ -8,9 +8,9 @@ const appErrorMessage =
 	dataModel.numberOfErrors === 0
 		? ""
 		: `${tools.smartPlural(
-				"invalid item",
-				dataModel.numberOfErrors
-		  )} during import, for details, see browser console`;
+			"invalid item",
+			dataModel.numberOfErrors
+		)} during import, for details, see browser console`;
 
 export interface MainModel {
 	// state
