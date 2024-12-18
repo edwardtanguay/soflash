@@ -63,3 +63,8 @@ VITE_SITE_DEVMODE = false
     -   flashcards
     -   these are the frontend version of the item
     -   generally have extra fields for frontend interaction, e.g. isOpen, highlighted, etc.
+-   data import
+    -   Go script
+    -   goes through list of data sources, copies them to /\_dataImportSource
+    -   later: saves history files so every time it gets a new version, it copies the current to the history
+    -   e.g. techlanglearn.flashcards.json
