@@ -26,3 +26,11 @@ export const chopLeft = (main: string, textToChop: string) => {
 	}
 	return main;
 };
+
+export const smartPlural = (singular: string, num: number): string => {
+	if (num === 1) {
+		return `${num} ${singular}`;
+	} else {
+		return `${num} ${singular}s`;
+	}
+}
