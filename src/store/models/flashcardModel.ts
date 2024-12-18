@@ -25,7 +25,6 @@ export interface FlashcardModel {
 	flashcardFilterItems: FlashcardFilterItem[];
 
 	// actions
-	loadFlashcards: Action<this>;
 	handleFlashcardSearchTextChange: Action<this, string>;
 	setAnswer: Action<this, string>;
 	setAnswerIsCorrect: Action<this, boolean>;
@@ -38,6 +37,7 @@ export interface FlashcardModel {
 
 	// thunks
 	setNextTestingFlashcard: Thunk<this, void, void, StoreModel>;
+	loadFlashcards: Thunk<this, void, void, StoreModel>;
 }
 
 export const flashcardModel: FlashcardModel = {
@@ -68,10 +68,6 @@ export const flashcardModel: FlashcardModel = {
 	],
 
 	// actions
-	loadFlashcards: action((state) => {
-		state.flashcards = dataModel.getFlashcards();
-		state.filteredFlashcards = structuredClone(state.flashcards);
-	}),
 	handleFlashcardSearchTextChange: action((state, searchText) => {
 		state.flashcardSearchText = searchText;
 		state.filteredFlashcards = state.flashcards.filter((m) =>
@@ -147,4 +143,9 @@ export const flashcardModel: FlashcardModel = {
 			]);
 		}
 	),
+	loadFlashcards: thunk((actions, _, { getState }) => {
+		const state = getState();
+		state.flashcards = dataModel.getFlashcards();
+		state.filteredFlashcards = structuredClone(state.flashcards);
+	}),
 };
