@@ -20,7 +20,7 @@ export const getFlashcards = (): Flashcard[] => {
 			extras: cleanSourceFlashcard.extras,
 			bulkSearch: "",
 		};
-		flashcard.bulkSearch = [flashcard.front, flashcard.back].join("|");
+		flashcard.bulkSearch = [flashcard.front, flashcard.back, flashcard.whenCreated].join("|");
 
 		if (!flashcard.back.includes(";") && !flashcard.back.includes("[")) {
 			flashcards.push(flashcard);
