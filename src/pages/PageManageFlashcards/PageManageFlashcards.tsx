@@ -12,8 +12,15 @@ export const PageManageFlashcards = () => {
 		flashcardFilterItems,
 		selectedFilterIdCode,
 	} = useTypedStoreState((state) => state.flashcardModel);
-	const { handleFlashcardSearchTextChange, setFilteredFlaschards } =
+	const { handleFlashcardSearchTextChange, setFilteredFlashcards } =
 		useTypedStoreActions((actions) => actions.flashcardModel);
+
+	const handleFilterDropdownChange = (
+		e: React.ChangeEvent<HTMLSelectElement>
+	) => {
+		const value = e.target.value;
+		setFilteredFlashcards(value);
+	};
 
 	return (
 		<section className="pageManageFlashcards">
@@ -29,21 +36,18 @@ export const PageManageFlashcards = () => {
 			</h2>
 			<form className="mt-3">
 				<div className="flex gap-2">
-					<p>{selectedFilterIdCode}</p>
-					{flashcardFilterItems.map((ffi, index) => {
-						return (
-							<button
-								key={index}
-								type="button"
-								className="btnNormal mb-3"
-								onClick={() =>
-									setFilteredFlaschards(ffi.idCode)
-								}
-							>
-								{ffi.label} ({ffi.amount})
-							</button>
-						);
-					})}
+					<select
+						value={selectedFilterIdCode}
+						onChange={(e) => handleFilterDropdownChange(e)}
+					>
+						{flashcardFilterItems.map((ffi, index) => {
+							return (
+								<option key={index} value={ffi.idCode}>
+									{ffi.label} ({ffi.amount})
+								</option>
+							);
+						})}
+					</select>
 				</div>
 				<input
 					className="text-[1.2rem] px-1"
