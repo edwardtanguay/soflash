@@ -9,6 +9,7 @@ import {
 } from "../../types";
 import * as dataModel from "../db/dataModel";
 import { StoreModel } from "../store";
+import * as appTools from "../../appTools";
 
 export interface FlashcardModel {
 	// state
@@ -116,18 +117,24 @@ export const flashcardModel: FlashcardModel = {
 		state.flashcardSearchText = "";
 		switch (filterIdCode) {
 			case "mostRecent":
-				state.filteredFlashcards = state.flashcards
-					.sort((a, b) => (a.whenCreated > b.whenCreated ? -1 : 1))
+				state.filteredFlashcards = appTools
+					.sortFlashcardsWhenAddedDescending(state.flashcards)
 					.slice(0, 10);
 				break;
 			case "spanish":
-				state.filteredFlashcards = state.flashcards.filter(m => m.language === 'es')
+				state.filteredFlashcards = state.flashcards.filter(
+					(m) => m.language === "es"
+				);
 				break;
 			case "french":
-				state.filteredFlashcards = state.flashcards.filter(m => m.language === 'fr')
+				state.filteredFlashcards = state.flashcards.filter(
+					(m) => m.language === "fr"
+				);
 				break;
 			case "italian":
-				state.filteredFlashcards = state.flashcards.filter(m => m.language === 'it')
+				state.filteredFlashcards = state.flashcards.filter(
+					(m) => m.language === "it"
+				);
 				break;
 		}
 	}),
