@@ -6,7 +6,7 @@ export const PageManageFlashcards = () => {
 
 	return (
 		<section className="pageManageFlashcards">
-			<p>there are {flashcards.length} flashcards</p>
+			<h2 className="text-xl">{flashcards.length} flashcards</h2>
 			<table>
 				<thead>
 					<tr>
