@@ -5,11 +5,14 @@ import {
 import "./styles.scss";
 
 export const PageManageFlashcards = () => {
-	const { flashcards, flashcardSearchText, filteredFlashcards } =
-		useTypedStoreState((state) => state.flashcardModel);
-	const { handleFlashcardSearchTextChange, setFilteredFlaschards } = useTypedStoreActions(
-		(actions) => actions.flashcardModel
-	);
+	const {
+		flashcards,
+		flashcardSearchText,
+		filteredFlashcards,
+		flashcardFilterItems,
+	} = useTypedStoreState((state) => state.flashcardModel);
+	const { handleFlashcardSearchTextChange, setFilteredFlaschards } =
+		useTypedStoreActions((actions) => actions.flashcardModel);
 
 	return (
 		<section className="pageManageFlashcards">
@@ -25,20 +28,20 @@ export const PageManageFlashcards = () => {
 			</h2>
 			<form className="mt-3">
 				<div className="flex gap-2">
-					<button
-						type="button"
-						className="btnNormal mb-3"
-						onClick={() => setFilteredFlaschards("latest10")}
-					>
-						latest 10
-					</button>
-					<button
-						type="button"
-						className="btnNormal mb-3"
-						onClick={() => setFilteredFlaschards("latest50")}
-					>
-						latest 50
-					</button>
+					{flashcardFilterItems.map((ffi, index) => {
+						return (
+							<button
+								key={index}
+								type="button"
+								className="btnNormal mb-3"
+								onClick={() =>
+									setFilteredFlaschards(ffi.idCode)
+								}
+							>
+								{ffi.label}
+							</button>
+						);
+					})}
 				</div>
 				<input
 					className="text-[1.2rem] px-1"

@@ -126,3 +126,8 @@ export const blankUser = {
 };
 
 export type SiteLocation = "local" | "vercel";
+
+export type FlashcardFilterItem = {
+	idCode: string;
+	label: string;
+}

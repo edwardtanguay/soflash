@@ -3,6 +3,7 @@ import {
 	blankFlashcardHistoryItem,
 	emptyFlashcard,
 	Flashcard,
+	FlashcardFilterItem,
 	FlashcardHistoryItem,
 	TestingStatus,
 } from "../../types";
@@ -21,6 +22,7 @@ export interface FlashcardModel {
 	numberRight: number;
 	numberWrong: number;
 	wrongAnswers: string[];
+	flashcardFilterItems: FlashcardFilterItem[];
 
 	// actions
 	loadFlashcards: Action<this>;
@@ -50,6 +52,20 @@ export const flashcardModel: FlashcardModel = {
 	numberRight: 0,
 	numberWrong: 0,
 	wrongAnswers: [],
+	flashcardFilterItems: [
+		{
+			idCode: "latest10",
+			label: "Latest 10",
+		},
+		{
+			idCode: "latest20",
+			label: "Latest 20",
+		},
+		{
+			idCode: "latest50",
+			label: "Latest 50",
+		},
+	],
 
 	// actions
 	loadFlashcards: action((state) => {
@@ -98,6 +114,11 @@ export const flashcardModel: FlashcardModel = {
 				state.filteredFlashcards = state.flashcards
 					.sort((a, b) => (a.whenCreated > b.whenCreated ? -1 : 1))
 					.slice(0, 10);
+				break;
+			case "latest20":
+				state.filteredFlashcards = state.flashcards
+					.sort((a, b) => (a.whenCreated > b.whenCreated ? -1 : 1))
+					.slice(0, 20);
 				break;
 			case "latest50":
 				state.filteredFlashcards = state.flashcards
