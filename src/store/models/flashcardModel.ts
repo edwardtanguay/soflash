@@ -155,6 +155,8 @@ export const flashcardModel: FlashcardModel = {
 						state.filteredFlashcards
 					);
 				break;
+			case "search":
+				state.filteredFlashcards = state.flashcards;
 		}
 		state.selectedFilterIdCode = filterIdCode;
 	}),

@@ -34,7 +34,7 @@ export const PageManageFlashcards = () => {
 					</span>
 				)}
 			</h2>
-			<form className="mt-3">
+			<form className="mt-3 flex gap-2">
 				<div className="flex gap-2">
 					<select
 						value={selectedFilterIdCode}
@@ -52,14 +52,16 @@ export const PageManageFlashcards = () => {
 						})}
 					</select>
 				</div>
-				<input
-					className="text-[1.2rem] px-1"
-					value={flashcardSearchText}
-					onChange={(e) =>
-						handleFlashcardSearchTextChange(e.target.value)
-					}
-					placeholder="search"
-				/>
+				{selectedFilterIdCode === "search" && (
+					<input
+						className="text-[1.2rem] px-1"
+						value={flashcardSearchText}
+						onChange={(e) =>
+							handleFlashcardSearchTextChange(e.target.value)
+						}
+						placeholder="search"
+					/>
+				)}
 			</form>
 			<table>
 				<thead>
