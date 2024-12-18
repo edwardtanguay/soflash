@@ -55,18 +55,23 @@ export const flashcardModel: FlashcardModel = {
 	wrongAnswers: [],
 	flashcardFilterItems: [
 		{
-			idCode: "latest10",
-			label: "Latest 10",
+			idCode: "mostRecent",
+			label: "Most Recent",
 			amount: 0,
 		},
 		{
-			idCode: "latest20",
-			label: "Latest 20",
+			idCode: "spanish",
+			label: "Spanish",
 			amount: 0,
 		},
 		{
-			idCode: "latest50",
-			label: "Latest 50",
+			idCode: "french",
+			label: "French",
+			amount: 0,
+		},
+		{
+			idCode: "italian",
+			label: "Italian",
 			amount: 0,
 		},
 	],
@@ -110,21 +115,19 @@ export const flashcardModel: FlashcardModel = {
 	setFilteredFlaschards: action((state, filterIdCode) => {
 		state.flashcardSearchText = "";
 		switch (filterIdCode) {
-			case "latest10":
+			case "mostRecent":
 				state.filteredFlashcards = state.flashcards
 					.sort((a, b) => (a.whenCreated > b.whenCreated ? -1 : 1))
 					.slice(0, 10);
-				console.log(11115, state.filteredFlashcards.length);
 				break;
-			case "latest20":
-				state.filteredFlashcards = state.flashcards
-					.sort((a, b) => (a.whenCreated > b.whenCreated ? -1 : 1))
-					.slice(0, 20);
+			case "spanish":
+				state.filteredFlashcards = state.flashcards.filter(m => m.language === 'es')
 				break;
-			case "latest50":
-				state.filteredFlashcards = state.flashcards
-					.sort((a, b) => (a.whenCreated > b.whenCreated ? -1 : 1))
-					.slice(0, 50);
+			case "french":
+				state.filteredFlashcards = state.flashcards.filter(m => m.language === 'fr')
+				break;
+			case "italian":
+				state.filteredFlashcards = state.flashcards.filter(m => m.language === 'it')
 				break;
 		}
 	}),
