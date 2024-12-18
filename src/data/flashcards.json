@@ -1,10 +1,23 @@
 [
 	{
-		"front": "the file will be overwritten",
-		"back": "el archivo se sobrescribirá"
+		"language": "es",
+		"front": "GitLab provides us with some variables",
+		"back": "GitLab nos proporciona algunas variables",
+		"whenCreated": "2024-12-01 00:00:00",
+		"extras": ""
 	},
 	{
-		"front": "to a large extent",
-		"back": "en gran medida"
+		"language": "es",
+		"front": "we will return to our project",
+		"back": "volveremos a nuestro proyecto",
+		"whenCreated": "2024-12-01 00:00:00",
+		"extras": ""
+	},
+	{
+		"language": "es",
+		"front": "for everything else",
+		"back": "para todo lo demás",
+		"whenCreated": "2024-12-01 00:00:00",
+		"extras": ""
 	}
 ]
