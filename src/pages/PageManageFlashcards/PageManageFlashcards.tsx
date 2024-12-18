@@ -24,13 +24,20 @@ export const PageManageFlashcards = () => {
 				)}
 			</h2>
 			<form className="mt-3">
-				<div>
+				<div className="flex gap-2">
 					<button
 						type="button"
 						className="btnNormal mb-3"
 						onClick={() => setFilteredFlaschards("latest10")}
 					>
 						latest 10
+					</button>
+					<button
+						type="button"
+						className="btnNormal mb-3"
+						onClick={() => setFilteredFlaschards("latest50")}
+					>
+						latest 50
 					</button>
 				</div>
 				<input

@@ -96,8 +96,13 @@ export const flashcardModel: FlashcardModel = {
 		switch (filterIdCode) {
 			case "latest10":
 				state.filteredFlashcards = state.flashcards
-					.sort((a, b) => (a.whenCreated > b.whenCreated ? 1 : -1))
-					.slice(0, 5);
+					.sort((a, b) => (a.whenCreated > b.whenCreated ? -1 : 1))
+					.slice(0, 10);
+				break;
+			case "latest50":
+				state.filteredFlashcards = state.flashcards
+					.sort((a, b) => (a.whenCreated > b.whenCreated ? -1 : 1))
+					.slice(0, 50);
 				break;
 		}
 	}),
