@@ -1,0 +1,15 @@
+
+const deleteDuplicates = (flashcards: Flashcard[]): Flashcard[] => {
+	const seen = new Set<string>();
+	return flashcards.filter((card) => {
+		if (seen.has(card.idCode)) {
+			return false; // Duplicate found, exclude it
+		}
+		seen.add(card.idCode);
+		return true; // Include the unique card
+	});
+};
+
+const randomizeArray = (flashcards: Flashcard[]): Flashcard[] => {
+	return [...flashcards].sort(() => Math.random() - 0.5);
+};

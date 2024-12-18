@@ -1,44 +1,29 @@
-import _rawFlashcards from "./data/flashcards.json";
-import { Flashcard, RawFlashcard } from "../../types";
+import { Flashcard } from "../../types";
 import * as qstr from "../../qtools/qstr";
+import * as importModel from './importModel';
 
-const rawFlashcards: RawFlashcard[] = _rawFlashcards;
+export let numberOfErrors = 0;
 
-const deleteDuplicates = (flashcards: Flashcard[]): Flashcard[] => {
-	const seen = new Set<string>();
-	return flashcards.filter((card) => {
-		if (seen.has(card.idCode)) {
-			return false; // Duplicate found, exclude it
-		}
-		seen.add(card.idCode);
-		return true; // Include the unique card
-	});
-};
-
-const randomizeArray = (flashcards: Flashcard[]): Flashcard[] => {
-	return [...flashcards].sort(() => Math.random() - 0.5);
-};
+const [cleanSourceFlashcards, errorCount] = importModel.getCleanSourceFlashcards();
+numberOfErrors += errorCount;
 
 export const getFlashcards = (): Flashcard[] => {
-	let flashcards: Flashcard[] = [];
-	for (const rawFlashcard of rawFlashcards) {
+	const flashcards: Flashcard[] = [];
+	for (const cleanSourceFlashcard of cleanSourceFlashcards) {
 		const flashcard: Flashcard = {
 			idCode: qstr.forceCamelNotation(
-				rawFlashcard.front + qstr.forcePascalNotation(rawFlashcard.back)
+				cleanSourceFlashcard.front + qstr.forcePascalNotation(cleanSourceFlashcard.back)
 			),
-			front: rawFlashcard.front,
-			back: rawFlashcard.back,
+			front: cleanSourceFlashcard.front,
+			back: cleanSourceFlashcard.back,
 			bulkSearch:
-				" " + rawFlashcard.front + " | " + rawFlashcard.back + " ",
+				" " + cleanSourceFlashcard.front + " | " + cleanSourceFlashcard.back + " ",
 			isShowing: false,
 		};
 
-		// TODO: we are ignoring flashcards with notes at the moment, program this back in
 		if (!flashcard.back.includes(";") && !flashcard.back.includes("[")) {
 			flashcards.push(flashcard);
 		}
 	}
-	flashcards = deleteDuplicates(flashcards);
-	flashcards = randomizeArray(flashcards);
 	return flashcards;
 };
