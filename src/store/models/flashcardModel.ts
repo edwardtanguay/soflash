@@ -44,7 +44,7 @@ export interface FlashcardModel {
 export const flashcardModel: FlashcardModel = {
 	// state
 	flashcards: [],
-	flashcardSearchText: "nnn",
+	flashcardSearchText: "",
 	testingFlashcard: emptyFlashcard,
 	answer: "",
 	answerIsCorrect: false,
@@ -59,7 +59,7 @@ export const flashcardModel: FlashcardModel = {
 			return state.flashcards;
 		} else {
 			return state.flashcards.filter((m) =>
-				m.bulkSearch.includes(state.flashcardSearchText)
+				m.bulkSearch.toLowerCase().includes(state.flashcardSearchText.toLowerCase())
 			);
 		}
 	}),

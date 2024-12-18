@@ -1,19 +1,35 @@
-import { useTypedStoreActions, useTypedStoreState } from "../../store/easy-peasy-hooks";
+import {
+	useTypedStoreActions,
+	useTypedStoreState,
+} from "../../store/easy-peasy-hooks";
 import "./styles.scss";
 
 export const PageManageFlashcards = () => {
-	const { flashcards, flashcardSearchText } =
+	const { flashcards, flashcardSearchText, filteredFlashcards } =
 		useTypedStoreState((state) => state.flashcardModel);
-	const {handleFlashcardSearchTextChange} = useTypedStoreActions(actions => actions.flashcardModel);
+	const { handleFlashcardSearchTextChange } = useTypedStoreActions(
+		(actions) => actions.flashcardModel
+	);
 
 	return (
 		<section className="pageManageFlashcards">
-			<h2 className="text-xl">{flashcards.length} flashcards</h2>
+			<h2 className="text-xl">
+				{filteredFlashcards.length === flashcards.length ? (
+					<span>Showing all {flashcards.length} flashcards</span>
+				) : (
+					<span>
+						Showing {filteredFlashcards.length} of{" "}
+						{flashcards.length} flashcards
+					</span>
+				)}
+			</h2>
 			<form className="mt-3">
 				<input
 					className="text-[1.2rem] px-1"
 					value={flashcardSearchText}
-					onChange={(e) => handleFlashcardSearchTextChange(e.target.value)}
+					onChange={(e) =>
+						handleFlashcardSearchTextChange(e.target.value)
+					}
 					placeholder="search"
 				/>
 			</form>
@@ -28,7 +44,7 @@ export const PageManageFlashcards = () => {
 					</tr>
 				</thead>
 				<tbody>
-					{flashcards.map((flashcard, index) => {
+					{filteredFlashcards.map((flashcard, index) => {
 						return (
 							<tr key={index}>
 								<td>{flashcard.language}</td>
