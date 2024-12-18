@@ -59,19 +59,19 @@ export type RawFlashcard = {
 };
 
 export type Flashcard = {
-	idCode: string;
+	language: string;
 	front: string;
 	back: string;
-	bulkSearch: string;
-	isShowing: boolean;
+	whenCreated: string;
+	extras: string;
 };
 
 export const emptyFlashcard: Flashcard = {
-	idCode: "",
+	language: "",
 	front: "",
 	back: "",
-	bulkSearch: "",
-	isShowing: false,
+	whenCreated: "",
+	extras: "",
 };
 
 export type TestingStatus =

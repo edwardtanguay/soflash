@@ -21,11 +21,11 @@ export const PageManageFlashcards = () => {
 					{flashcards.map((flashcard, index) => {
 						return (
 							<tr key={index}>
-								<td>Row 3, Cell 2</td>
+								<td>{flashcard.language}</td>
 								<td>{flashcard.front}</td>
-								<td>Row 3, Cell 3</td>
-								<td>Row 3, Cell 4</td>
-								<td>Row 3, Cell 5</td>
+								<td>{flashcard.back}</td>
+								<td>{flashcard.whenCreated}</td>
+								<td>{flashcard.extras}</td>
 							</tr>
 						);
 					})}
