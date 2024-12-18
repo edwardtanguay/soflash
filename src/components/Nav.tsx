@@ -4,6 +4,7 @@ import * as tools from "../tools";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useState } from "react";
 import React from "react";
+import { useTypedStoreState } from "../store/easy-peasy-hooks";
 
 const menuItems = [
 	{
@@ -40,6 +41,7 @@ const menuItems = [
 
 export const Nav = () => {
 	const [showMobileMenu, setShowMobileMenu] = useState(false);
+	const { appErrorMessage } = useTypedStoreState((state) => state.mainModel);
 
 	const location = useLocation();
 	const pageIdCode = tools.chopLeft(location.pathname, "/");
@@ -122,9 +124,11 @@ export const Nav = () => {
 							</ul>
 						</div>
 					</nav>
-					<div className="bg-red-400 text-red-900 pl-4">
-						<p>error test</p>
-					</div>
+					{appErrorMessage !== "" && (
+						<div className="bg-red-400 text-red-900 pl-4">
+							<p>{appErrorMessage}</p>
+						</div>
+					)}
 				</>
 			)}
 		</>
