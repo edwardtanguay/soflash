@@ -24,6 +24,7 @@ export interface FlashcardModel {
 	numberWrong: number;
 	wrongAnswers: string[];
 	flashcardFilterItems: FlashcardFilterItem[];
+	selectedFilterIdCode: string;
 
 	// actions
 	handleFlashcardSearchTextChange: Action<this, string>;
@@ -75,7 +76,13 @@ export const flashcardModel: FlashcardModel = {
 			label: "Italian",
 			amount: 0,
 		},
+		{
+			idCode: "search",
+			label: "Search",
+			amount: 0,
+		},
 	],
+	selectedFilterIdCode: "search",
 
 	// actions
 	handleFlashcardSearchTextChange: action((state, searchText) => {
@@ -125,21 +132,31 @@ export const flashcardModel: FlashcardModel = {
 				state.filteredFlashcards = state.flashcards.filter(
 					(m) => m.language === "es"
 				);
-				state.filteredFlashcards = appTools.sortFlashcardsWhenAddedDescending(state.filteredFlashcards);
+				state.filteredFlashcards =
+					appTools.sortFlashcardsWhenAddedDescending(
+						state.filteredFlashcards
+					);
 				break;
 			case "french":
 				state.filteredFlashcards = state.flashcards.filter(
 					(m) => m.language === "fr"
 				);
-				state.filteredFlashcards = appTools.sortFlashcardsWhenAddedDescending(state.filteredFlashcards);
+				state.filteredFlashcards =
+					appTools.sortFlashcardsWhenAddedDescending(
+						state.filteredFlashcards
+					);
 				break;
 			case "italian":
 				state.filteredFlashcards = state.flashcards.filter(
 					(m) => m.language === "it"
 				);
-				state.filteredFlashcards = appTools.sortFlashcardsWhenAddedDescending(state.filteredFlashcards);
+				state.filteredFlashcards =
+					appTools.sortFlashcardsWhenAddedDescending(
+						state.filteredFlashcards
+					);
 				break;
 		}
+		state.selectedFilterIdCode = filterIdCode;
 	}),
 
 	// thunks

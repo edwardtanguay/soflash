@@ -10,6 +10,7 @@ export const PageManageFlashcards = () => {
 		flashcardSearchText,
 		filteredFlashcards,
 		flashcardFilterItems,
+		selectedFilterIdCode,
 	} = useTypedStoreState((state) => state.flashcardModel);
 	const { handleFlashcardSearchTextChange, setFilteredFlaschards } =
 		useTypedStoreActions((actions) => actions.flashcardModel);
@@ -28,6 +29,7 @@ export const PageManageFlashcards = () => {
 			</h2>
 			<form className="mt-3">
 				<div className="flex gap-2">
+					<p>{selectedFilterIdCode}</p>
 					{flashcardFilterItems.map((ffi, index) => {
 						return (
 							<button
