@@ -1,4 +1,4 @@
-export const PageFlashcards = () => {
+export const PageManageFlashcards = () => {
 	return (
 		<p>there are n flashcards</p>
 	);

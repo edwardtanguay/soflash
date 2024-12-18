@@ -14,7 +14,7 @@ import { store } from "./store/store.ts";
 import { PageProfile } from "./pages/PageProfile.tsx";
 import { PageRegister } from "./pages/PageRegister.tsx";
 import { PageLogin } from "./pages/PageLogin.tsx";
-import { PageFlashcards } from "./pages/PageFlashcards.tsx";
+import { PageManageFlashcards } from "./pages/PageManageFlashcards.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -43,8 +43,8 @@ const router = createBrowserRouter([
 				element: <PageAbout />,
 			},
 			{
-				path: "flashcards",
-				element: <PageFlashcards />,
+				path: "manageFlashcards",
+				element: <PageManageFlashcards/>
 			},
 			{
 				path: "/",

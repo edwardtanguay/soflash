@@ -32,8 +32,8 @@ const menuItems = [
 		display: true,
 	},
 	{
-		idCode: "flashcards",
-		title: "Flashcards",
+		idCode: "manageFlashcards",
+		title: "Manage Flashcards",
 		display: true,
 	},
 ];
