@@ -2297,6 +2297,20 @@
 	},
 	{
 		"language": "es",
+		"front": "we can check it and it should bring us a list",
+		"back": "lo podemos comprobar y este nos debería traer una lista",
+		"whenCreated": "2024-12-19 11:21:16",
+		"extras": ""
+	},
+	{
+		"language": "es",
+		"front": "when we ran the server, a file called todo.db was created",
+		"back": "cuando corrimos el servidor, se ha creado un archivo llamada todo.db",
+		"whenCreated": "2024-12-19 11:18:26",
+		"extras": "conj=correr; corrimos = preterite; preterite for both -er and -ir verbs is -imos"
+	},
+	{
+		"language": "es",
 		"front": "that we are labeling",
 		"back": "que estamos etiquetando",
 		"whenCreated": "2024-12-18 10:47:08",
