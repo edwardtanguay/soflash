@@ -5,7 +5,7 @@ const _siteLocation: SiteLocation = import.meta.env.VITE_SITE_LOCATION;
 const _devMode = import.meta.env.VITE_SITE_DEVMODE;
 
 export const appVersion = (): string => {
-	return "0.120 feat aaa";
+	return "0.123 hideman3";
 };
 
 export const devMode = (): boolean => {

@@ -32,11 +32,11 @@ const menuItems = [
 		title: "About",
 		display: true,
 	},
-	{
-		idCode: "manageFlashcards",
-		title: "Manage Flashcards",
-		display: true,
-	},
+	// {
+	// 	idCode: "manageFlashcards",
+	// 	title: "Manage Flashcards",
+	// 	display: true,
+	// },
 ];
 
 export const Nav = () => {
