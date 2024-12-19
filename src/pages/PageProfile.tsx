@@ -74,7 +74,7 @@ export const PageProfile = () => {
 					</p>
 					<button
 						onClick={() => clearLocalStorage()}
-						className="danger mt-1"
+						className="btnDanger mt-1"
 					>
 						Reset now
 					</button>

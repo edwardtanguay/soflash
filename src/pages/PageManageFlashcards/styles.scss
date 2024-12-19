@@ -1,0 +1,51 @@
+.pageManageFlashcards {
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 20px 0;
+		font-family: Arial, sans-serif;
+		text-align: left;
+
+		th,
+		td {
+			padding: .3rem;
+			border: 1px solid #ccc;
+		}
+
+		thead {
+			background-color: #f2f2f2;
+
+			th {
+				color: #333;
+				font-weight: bold;
+				font-size: .8rem;
+			}
+		}
+
+		tbody {
+			font-size: .8rem;
+			tr {
+				&:nth-child(even) {
+					background-color: #cbd5e1;
+				}
+
+				&:nth-child(odd) {
+					background-color: #94a3b8;
+				}
+
+				&:hover {
+					filter: brightness(1.1)
+				}
+			}
+			td {
+				color: #555;
+			}
+			td:nth-child(1) {
+				text-align: center;
+			}
+			td:nth-child(4) {
+				text-align: center;
+			}
+		}
+	}
+}

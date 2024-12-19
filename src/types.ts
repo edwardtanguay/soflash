@@ -1,3 +1,23 @@
+import { z } from "zod";
+
+export const CleanSourceFlashcardSchema = z.object({
+	language: z.enum(["it", "es", "fr"]),
+	front: z.string().min(1, { message: "cannot be empty" }),
+	back: z.string().min(1, { message: "cannot be empty" }),
+	whenCreated: z
+		.string()
+		.refine(
+			(value) => /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/.test(value),
+			{
+				message:
+					"Invalid date/time format. Expected YYYY-MM-DD HH:mm:ss",
+			}
+		),
+	extras: z.string(),
+});
+
+export type CleanSourceFlashcard = z.infer<typeof CleanSourceFlashcardSchema>;
+
 export type RawLineItem = {
 	chapter: number;
 	lineNumber: number;
@@ -40,18 +60,22 @@ export type RawFlashcard = {
 
 export type Flashcard = {
 	idCode: string;
+	language: string;
 	front: string;
 	back: string;
+	whenCreated: string;
+	extras: string;
 	bulkSearch: string;
-	isShowing: boolean;
 };
 
 export const emptyFlashcard: Flashcard = {
 	idCode: "",
+	language: "",
 	front: "",
 	back: "",
+	whenCreated: "",
+	extras: "",
 	bulkSearch: "",
-	isShowing: false,
 };
 
 export type TestingStatus =
@@ -102,3 +126,9 @@ export const blankUser = {
 };
 
 export type SiteLocation = "local" | "vercel";
+
+export type FlashcardFilterItem = {
+	idCode: string;
+	label: string;
+	amount: number;
+}

@@ -1,0 +1,87 @@
+// it; adverbsOfTime
+
+tomorow
+domani
+rank=4.8
+
+ieri 	gestern 
+oggi 	heute 
+adesso 	jetzt 
+dopo 	dann, danach 
+prima 	vorher 
+finora 	bisher 
+già 	schon 
+(non) ancora 	noch (nicht) 
+presto 	früh; bald 
+raramente 	selten 
+a volte 	manchmal 
+spesso 	oft 
+sempre 	immer 
+subito 	sofort 
+
+// it; adverbsOfPlace
+
+lontano 	fern 
+vicino 	nah 
+sopra 	oben 
+sotto 	unten 
+qui, qua 	hier 
+lì, là 	dort 
+dentro 	drinnen, innen 
+fuori 	außen 
+avanti 	vorwärts 
+indietro 	rückwärts 
+a destra 	rechts 
+a sinistra 	links 
+da qualche parte 	irgendwo 
+Genau wie die Temporaladverbien, können die Lokaladverbien am Anfang und am Ende eines Satzes stehen. 
+
+// it; adverbsOfManner
+bene 	gut 
+certamente, sicuramente 	bestimmt 
+forse, magari 	vielleicht 
+insieme 	zusammen 
+male 	schlecht 
+purtroppo 	leider 
+quasi 	fast 
+solo, solamente 	nur 
+Forse Roberta non vuole telefonare. – Vielleicht will Roberta nicht telefonieren.
+
+// it; adverbsOfCause
+perciò 	deshalb 
+cioè 	nämlich 
+ciò nonostante, lo stesso 	trotzdem 
+Perché - because
+
+    Example: Non sono venuto perché ero stanco.
+    (I didn’t come because I was tired.)
+
+Poiché - since/as
+
+    Example: Poiché pioveva, siamo rimasti a casa.
+    (Since it was raining, we stayed at home.)
+
+Siccome - as/since
+
+    Example: Siccome non avevo fame, non ho mangiato.
+    (As I wasn’t hungry, I didn’t eat.)
+
+Dunque - therefore
+
+    Example: Era tardi, dunque siamo andati via.
+    (It was late, therefore we left.)
+
+Pertanto - therefore/for this reason
+
+    Example: Non aveva studiato, pertanto ha fallito l’esame.
+    (He didn’t study, therefore he failed the exam.)
+
+Infatti - in fact
+
+    Example: Non mi piace il caldo; infatti preferisco l’inverno.
+    (I don’t like the heat; in fact, I prefer winter.)
+
+Quindi - so/therefore
+
+    Example: Non avevo soldi, quindi non sono uscito.
+    (I had no money, so I didn’t go out.)

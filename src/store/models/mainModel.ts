@@ -1,10 +1,21 @@
 import { action, Action, computed, Computed, Thunk, thunk } from "easy-peasy";
 import { StoreModel } from "../store";
 import * as config from "../../config";
+import * as dataModel from "../db/dataModel";
+import * as tools from "../../tools";
+
+const appErrorMessage =
+	dataModel.numberOfErrors === 0
+		? ""
+		: `${tools.smartPlural(
+			"invalid item",
+			dataModel.numberOfErrors
+		)} during import, for details, see browser console`;
 
 export interface MainModel {
 	// state
 	screenWidth: number;
+	appErrorMessage: string;
 
 	// actions
 	setScreenWidth: Action<this, number>;
@@ -20,6 +31,7 @@ export interface MainModel {
 export const mainModel: MainModel = {
 	// state
 	screenWidth: 0,
+	appErrorMessage,
 
 	// computed state
 	isSmartphone: computed((state) => {

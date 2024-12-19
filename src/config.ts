@@ -5,7 +5,7 @@ const _siteLocation: SiteLocation = import.meta.env.VITE_SITE_LOCATION;
 const _devMode = import.meta.env.VITE_SITE_DEVMODE;
 
 export const appVersion = (): string => {
-	return "0.031 readme";
+	return "0.103 check2";
 };
 
 export const devMode = (): boolean => {
