@@ -5,10 +5,8 @@ const _siteLocation: SiteLocation = import.meta.env.VITE_SITE_LOCATION;
 const _devMode = import.meta.env.VITE_SITE_DEVMODE;
 
 export const appVersion = (): string => {
-	return "0.103 check3";
+	return "0.104 check88";
 };
-
-// test: added in main
 
 export const devMode = (): boolean => {
 	if (config.siteIsOnline()) {
