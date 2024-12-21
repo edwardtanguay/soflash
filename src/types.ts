@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const CleanSourceFlashcardSchema = z.object({
-	language: z.enum(["it", "es", "fr"]),
+	language: z.enum(["it", "es", "fr", "nl"]),
 	front: z.string().min(1, { message: "cannot be empty" }),
 	back: z.string().min(1, { message: "cannot be empty" }),
 	whenCreated: z
@@ -131,4 +131,4 @@ export type FlashcardFilterItem = {
 	idCode: string;
 	label: string;
 	amount: number;
-}
+};

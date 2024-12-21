@@ -490,6 +490,41 @@
 		"extras": "crea = tu, cree = usted"
 	},
 	{
+		"language": "nl",
+		"front": "because it is maintained by a dedicated community",
+		"back": "omdat het wordt onderhouden door een toegewijde gemeenschap",
+		"whenCreated": "2024-12-21 03:07:53",
+		"extras": "pr=TOO-*eh-wigh-deh; pr=*eh-MAYN-s*ahp"
+	},
+	{
+		"language": "nl",
+		"front": "OBS can be used on both Apple and Windows",
+		"back": "OBS kan worden gebruikt op zowel Apple en Windows",
+		"whenCreated": "2024-12-21 03:05:49",
+		"extras": ""
+	},
+	{
+		"language": "nl",
+		"front": "it is completely free to use",
+		"back": "het is volledig gratis te gebruiken",
+		"whenCreated": "2024-12-21 03:00:00",
+		"extras": ""
+	},
+	{
+		"language": "nl",
+		"front": "let's get started",
+		"back": "laten we aan de slag gaan",
+		"whenCreated": "2024-12-21 02:57:32",
+		"extras": ""
+	},
+	{
+		"language": "nl",
+		"front": "to improve your broadcast",
+		"back": "om je uitzending te verbeteren",
+		"whenCreated": "2024-12-21 02:56:13",
+		"extras": ""
+	},
+	{
 		"language": "it",
 		"front": "so, in any case",
 		"back": "quindi, in ogni caso",
@@ -2293,6 +2328,27 @@
 		"front": "has it happened to you that while you are programming",
 		"back": "te ha pasado que mientras estás programando",
 		"whenCreated": "2024-12-01 00:00:00",
+		"extras": ""
+	},
+	{
+		"language": "es",
+		"front": "since if the id is not found",
+		"back": "ya que si no se encuentra el id",
+		"whenCreated": "2024-12-21 02:08:11",
+		"extras": "pr=JAH-kay-see"
+	},
+	{
+		"language": "es",
+		"front": "where we are going to raise an exception",
+		"back": "donde vamos a levantar una excepción",
+		"whenCreated": "2024-12-21 02:06:30",
+		"extras": ""
+	},
+	{
+		"language": "es",
+		"front": "the status codes that an API returns",
+		"back": "los códigos de estado que una API retorna",
+		"whenCreated": "2024-12-21 01:58:38",
 		"extras": ""
 	},
 	{
